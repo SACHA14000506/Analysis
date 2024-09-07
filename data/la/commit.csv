@@ -1,0 +1,1202 @@
+project,parent_hashes,commit_hash,author_name,author_email,author_date,author_date_unix_timestamp,commit_message,la,ld,fileschanged,nf,ns,nd,entropy,ndev,lt,nuc,age,exp,rexp,sexp,classification,fix,is_buggy_commit
+z3,59d8895d1583496f53205ea4dc81b1b91295fbb3,a74ef394ec98ee42daf1c69f251e036561f64ef6,Nikolaj Bjorner,nbjorner@microsoft.com,2020/7/30 10:19,1596075572,some more rewrites,23,2,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h",2,1,1,0.242292189,1,4016,2,1698,0,0,0,0,0,1
+z3,7b0327dbad70ec613aceaccdc78b1f528f0b2e7c,89c9bb2e0e5867ec858a30374ef4411f4ccfd1ac,Murphy Berzish,murphy.berzish@gmail.com,2019/11/29 17:19,1575019166,z3str3: don't call propagate() in init_search_eh(),0,4,src/smt/theory_str.cpp,1,1,1,0,2,8663,1,1544,0,0,0,0,0,1
+z3,becf423c77d83793cec53bde936957aea6547723,fdc87f286f83ea0be6cb90663f3f9f4393c04077,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/9 17:40,1589017202,"na (#4254)
+
+* remove level of indirection for context and ast_manager in smt_theory
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* add request by #4252
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* move to def
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* int
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4251
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4255
+
+* fix #4257
+
+* add code to debug #4246
+
+* restore new solver as default
+
+* na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4246
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",269,231,"src/ackermannization/ackr_helper.h, src/ackermannization/lackr.cpp, src/ackermannization/lackr.h, src/math/lp/nla_basics_lemmas.cpp, src/math/lp/nla_common.cpp, src/math/lp/nla_common.h, src/math/lp/nla_core.cpp, src/math/lp/nla_core.h, src/math/lp/nla_intervals.cpp, src/math/lp/nla_monotone_lemmas.cpp, src/math/lp/nla_order_lemmas.cpp, src/math/lp/nla_order_lemmas.h, src/math/lp/nla_tangent_lemmas.cpp, src/smt/params/smt_params_helper.pyg, src/smt/smt_consequences.cpp, src/smt/smt_context.h, src/smt/theory_lra.cpp, src/solver/solver2tactic.cpp",18,4,5,3.001166649,2,9492,18,961.2222222,2,0,1,1,1,1
+z3,9df6c10ad87ae37c7deba1e7428496dbd5ab0022,2c02264a94d2377ebf5f64162813b7e379446619,Caleb Stanford,caleb.pirsquared@gmail.com,2020/8/13 15:47,1597304856,"Regex solver updates (#4636)
+
+* std::cout debugging statements
+
+* comment out std::cout debugging as this is now a shared fork
+
+* convert std::cout to TRACE statements for seq_rewriter and seq_regex
+
+* add cases to min_length and max_length for regexes
+
+* bug fix
+
+* update min_length and max_length functions for REs
+
+* initial pass on simplifying derivative normal forms by eliminating redundant predicates locally
+
+* add seq_regex_brief trace statements
+
+* working on debugging ref count issue
+
+* fix ref count bug and convert trace statements to seq_regex_brief
+
+* add compact tracing for cache hits/misses
+
+* seq_regex fix cache hit/miss tracing and wrapper around is_nullable
+
+* minor
+
+* label and disable more experimental changes for testing
+
+* minor documentation / tracing
+
+* a few more @EXP annotations
+
+* dead state elimination skeleton code
+
+* progress on dead state elimination
+
+* more progress on dead state elimination
+
+* refactor dead state class to separate self-contained state_graph class
+
+* finish factoring state_graph to only work with unsigned values, and implement separate functionality for expr* logic
+
+* implement get_all_derivatives, add debug tracing
+
+* trace statements for debugging is_nullable loop bug
+
+* fix is_nullable loop bug
+
+* comment out local nullable change and mark experimental
+
+* pretty printing for state_graph
+
+* rewrite state graph to remove the fragile assumption that all edges from a state are added at a time
+
+* start of general cycle detection check + fix some comments
+
+* implement full cycle detection procedure
+
+* normalize derivative conditions to form 'ele <= a'
+
+* order derivative conditions by character code
+
+* fix confusing names m_to and m_from
+
+* assign increasing state IDs from 1 instead of using get_id on AST node
+
+* remove elim_condition call in get_dall_derivatives
+
+* use u_map instead of uint_map to avoid memory leak
+
+* remove unnecessary call to is_ground
+
+* debugging
+
+* small improvements to seq_regex_brief tracing
+
+* fix bug on evil2 example
+
+* save work
+
+* new propagate code
+
+* work in progress on using same seq sort for deriv calls
+
+* avoid re-computing derivatives: use same head var for every derivative call
+
+* use min_length on regexes to prune search
+
+* simple implementation of can_be_in_cycle using rank function idea
+
+* add a disabled experimental change
+
+* minor cleanup comments, etc.
+
+* seq_rewriter cleanup for PR
+
+* typo noticed by Nikolaj
+
+* move state graph to util/state_graph
+
+* re-add accidentally removed line
+
+* clean up seq_regex code removing obsolete functions and comments
+
+* a few more cleanup items
+
+* oops, missed merge change to fix compilation
+
+* disabled change to lift unions to the top level and treat them seperately in seq_regex solver
+
+* added get_overapprox_regex to over-approximate regex membership constraints
+
+* replace calls to is_epsilon with a centrally available method in seq_decl_plugin
+
+* simplifications and modifications in get_overapprox_regex and related
+
+* added approximation support for sequence expressions that use ite
+
+* removed is_app check that was redundant
+
+* tweak differences with upstream
+
+* rewrite derivative leaves
+
+* enable Antimorov-style derivatives via lifting unions in the solver
+
+* TODO placeholders for outputting state graph
+
+* change order in seq_regex propagate_in_re
+
+* implement a more restricted form of Antimorov derivatives via a special op code to indicate lifting unions
+
+* minor
+
+* new Antimorov optimizations based on BDD compatibility checking
+
+* seq regex tracing for # of derivatives
+
+* fix get_cofactors (currently this fix is buggy)
+
+* partially revert get_cofactors buggy change
+
+* re-implement get_cofactors to more efficiently explore nodes in the derivative expression
+
+* dgml generation for state graph
+
+* fix release build
+
+* improved dgml output
+
+* bug fixes in dgml generation
+
+* dot output support for state_graph and moved dgml and dot output under CASSERT
+
+* updated tracing of what regex corresponds to what state id with /tr:state_graph
+
+* clean up & document Antimorov derivative support
+
+* remove op cache tracing
+
+* remove re_rank experimental idea
+
+* small fix
+
+* fix Antimorov derivative (important change for the good performance)
+
+* remove unused and unnecessary code
+
+* implemented simpler efficient get_cofactors alternative mk_deriv_accept
+
+* simplifications in propagate_accept, and trace unusual cases
+
+* document the various seq_regex tracing & debugging command-line options
+
+* fix debug build (broken tracing)
+
+* guard eager Antimorov lifting for possible disabling
+
+* fix bug in propagate_accept Rule 1
+
+* disable eager version of Antimorov lifting for performance reasons
+
+* remove some remaining obsolete comments
+
+Co-authored-by: calebstanford-msr <t-casta@microsoft.com>
+Co-authored-by: Margus Veanes <margus@microsoft.com>",551,135,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h, src/smt/seq_regex.cpp, src/smt/seq_regex.h, src/util/state_graph.cpp",7,3,4,1.868148704,3,6838,7,1329.285714,0,0,3,1,1,1
+z3,f4ec63f39c249299eaca857bf594b568268e2a9e,a51e40a6cd4f2f2897dbbbbac96ceda7fa07f0c1,Nikolaj Bjorner,nbjorner@microsoft.com,2020/8/6 14:26,1596695211,"gc perf fix
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",46,4,"src/smt/smt_context.cpp, src/smt/watch_list.cpp, src/smt/watch_list.h",3,1,1,1.07832208,3,3863,3,2845,20,0,3,0,1,1
+z3,69b4a819a6b216256a1ac3a518f0d4909e3b8bd4,e0a9848e018b7daec5cc21c333a6513242d1ea15,Nikolaj Bjorner,nbjorner@microsoft.com,2020/7/30 12:33,1596083612,fixing build,8,6,"src/ast/rewriter/arith_rewriter.cpp, src/ast/rewriter/seq_rewriter.cpp",2,1,1,0.985228136,3,5471,2,2266.5,23,0,2,0,1,1
+z3,09dbacdf5072073394e2610319b4b14a40f02da9,1d0572354b448a29bad4431948850f92ca07e6da,Nikolaj Bjorner,nbjorner@microsoft.com,2020/1/1 20:14,1577880852,"add bit-matrix, avoid flattening and/or after bit-blasting, split pdd_grobner into solver/simplifier, add xlin, add smtfd option for incremental mode logic
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",991,386,"scripts/mk_project.py, src/cmd_context/check_logic.cpp, src/math/dd/dd_pdd.cpp, src/math/dd/dd_pdd.h, src/math/grobner/CMakeLists.txt, src/math/grobner/pdd_simplifier.cpp, src/math/grobner/pdd_simplifier.h, src/math/grobner/pdd_solver.cpp, src/math/grobner/pdd_solver.h, src/math/simplex/CMakeLists.txt, src/math/simplex/bit_matrix.cpp, src/math/simplex/bit_matrix.h, src/sat/sat_solver/inc_sat_solver.cpp, src/solver/smt_logics.cpp, src/tactic/portfolio/smt_strategic_solver.cpp, src/test/pdd.cpp, src/test/pdd_solver.cpp",17,7,9,2.540414703,3,4425,17,740.1176471,25,0,2,0,0,1
+z3,8db04298095f2bbd301c4411ae334ec22b1e1eb5,b2c3025e2185057694bcc4f23e965fd367070f3f,Nikolaj Bjorner,nbjorner@microsoft.com,2019/11/21 16:37,1574325465,"fix #2714
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",2,3,"src/smt/smt_conflict_resolution.cpp, src/smt/theory_str.cpp",2,1,1,0.970950594,3,9799,2,2061,42,0,4,0,1,1
+z3,7e415c1b6972c32b5385de6a38b08d46c7ea9bb0,32e5c6ffd1d2743fd0bcddc75006cddb9316cbaf,Murphy Berzish,murphy.berzish@gmail.com,2019/12/4 16:41,1575448911,z3str3: missed instance of rewrite-then-assert,1,1,src/smt/theory_str.cpp,1,1,1,0,3,8663,1,1549,1,0,5,0,0,1
+z3,9af4cc0fd68b6e8929ea605b944ee5415dd4191a,b35ec49b402ed8ec2bd5a0bfacb3472483c77ba0,Nikolaj Bjorner,nbjorner@microsoft.com,2019/12/3 12:53,1575348786,fix #2778,7,4,src/smt/theory_diff_logic_def.h,1,1,1,0,3,1185,1,2598,44,0,6,0,1,1
+z3,d13e584706dbc9b3a6684fa38b17366ba7b578a3,09516d74f638a57cf09c3551734cd94e5949a6bc,Lev Nachmanson,levnach@hotmail.com,2020/6/14 15:50,1592121044,"change the default for cheap eqs to table
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",1,1,src/smt/params/smt_params_helper.pyg,1,1,1,0,4,0,1,2750,0,0,7,0,0,1
+z3,b2bfb1faea933af69fbaeafb85daf3a2322528c9,34cc60410fce6c4b83dcdca8ee56d24718cae69a,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/17 5:08,1589663316,"additional str/re operators, remove encoding option from zstring
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",210,44,"src/api/api_seq.cpp, src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h, src/math/lp/nla_monotone_lemmas.cpp, src/math/lp/nla_order_lemmas.cpp, src/smt/seq_axioms.cpp, src/smt/seq_axioms.h",9,4,5,2.392606853,4,5335,9,1235.888889,45,0,13,0,0,1
+z3,"8b4929ccda8627cde702dd5973bd199a33babd39, 3c606ea9b206bb08df62855c2c1f14cccebdd1fb",ba40b3617661aaa83d9d54277fdd01d79023f327,Murphy Berzish,mtrberzi@users.noreply.github.com,2020/5/15 20:42,1589546527,"Merge pull request #4319 from mtrberzi/disable-get-grounded-concats
+
+Z3str3: disable compute_contains() and get_grounded_concats() checks",2,0,,0,0,0,0,4,0,0,0,2,0,0,0,0,1
+z3,293b0b8cc25400bbb37e6ab6a4bd6ce6fcfde080,976e4c91b0f151483e3cf047e294fb5e58ef7580,Caleb Stanford,caleb.pirsquared@gmail.com,2020/7/30 16:54,1596099289,"Integrate new regex solver (#4602)
+
+* std::cout debugging statements
+
+* comment out std::cout debugging as this is now a shared fork
+
+* convert std::cout to TRACE statements for seq_rewriter and seq_regex
+
+* add cases to min_length and max_length for regexes
+
+* bug fix
+
+* update min_length and max_length functions for REs
+
+* initial pass on simplifying derivative normal forms by eliminating redundant predicates locally
+
+* add seq_regex_brief trace statements
+
+* working on debugging ref count issue
+
+* fix ref count bug and convert trace statements to seq_regex_brief
+
+* add compact tracing for cache hits/misses
+
+* seq_regex fix cache hit/miss tracing and wrapper around is_nullable
+
+* minor
+
+* label and disable more experimental changes for testing
+
+* minor documentation / tracing
+
+* a few more @EXP annotations
+
+* dead state elimination skeleton code
+
+* progress on dead state elimination
+
+* more progress on dead state elimination
+
+* refactor dead state class to separate self-contained state_graph class
+
+* finish factoring state_graph to only work with unsigned values, and implement separate functionality for expr* logic
+
+* implement get_all_derivatives, add debug tracing
+
+* trace statements for debugging is_nullable loop bug
+
+* fix is_nullable loop bug
+
+* comment out local nullable change and mark experimental
+
+* pretty printing for state_graph
+
+* rewrite state graph to remove the fragile assumption that all edges from a state are added at a time
+
+* start of general cycle detection check + fix some comments
+
+* implement full cycle detection procedure
+
+* normalize derivative conditions to form 'ele <= a'
+
+* order derivative conditions by character code
+
+* fix confusing names m_to and m_from
+
+* assign increasing state IDs from 1 instead of using get_id on AST node
+
+* remove elim_condition call in get_dall_derivatives
+
+* use u_map instead of uint_map to avoid memory leak
+
+* remove unnecessary call to is_ground
+
+* debugging
+
+* small improvements to seq_regex_brief tracing
+
+* fix bug on evil2 example
+
+* save work
+
+* new propagate code
+
+* work in progress on using same seq sort for deriv calls
+
+* avoid re-computing derivatives: use same head var for every derivative call
+
+* use min_length on regexes to prune search
+
+* simple implementation of can_be_in_cycle using rank function idea
+
+* add a disabled experimental change
+
+* minor cleanup comments, etc.
+
+* seq_rewriter cleanup for PR
+
+* typo noticed by Nikolaj
+
+* move state graph to util/state_graph
+
+* re-add accidentally removed line
+
+* clean up seq_regex code removing obsolete functions and comments
+
+* a few more cleanup items
+
+* remove experimental functionality for integration
+
+* fix compilation
+
+* remove some tracing and TODOs
+
+* remove old comment
+
+* update copyright dates to 2020
+
+* feedback from Nikolaj
+
+* use [] for map access
+
+* make state_graph methods constant
+
+* avoid recursion in mark_dead_recursive and mark_live_recursive
+
+* a possible bug fix in propagate_nonempty
+
+* write down list of invariants in state_graph
+
+* implement partial invariant check and insert CASSERT statements
+
+* expand on invariant check and tracing
+
+* finish state graph invariant check
+
+* minor tweaks
+
+* regex propagation: convert first two axioms to propagations
+
+* remove obsolete regex solver functionality
+
+Co-authored-by: calebstanford-msr <t-casta@microsoft.com>",924,259,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.cpp, src/smt/seq_regex.cpp, src/smt/seq_regex.h, src/util/CMakeLists.txt, src/util/state_graph.cpp, src/util/state_graph.h",8,3,4,1.917749947,4,6110,8,938.75,7,0,14,1,1,1
+z3,2e714fca7c334bf63e18e5e18daa1cf8f5b339fa,cceae2e3f088e91c921d107a4592a9af2978e4a7,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/7 17:27,1588843642,"old solver as default
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",1,1,src/smt/params/smt_params_helper.pyg,1,1,1,0,4,0,1,2712,54,0,10,0,0,1
+z3,f92050c7e5bbe5dfb13aff02fdb30b9270f39c33,73d73e6c953dd0d63d76c1dca7f88bc04ccf4565,Nikolaj Bjorner,nbjorner@microsoft.com,2020/3/25 13:29,1585114176,"enhance rewriting for indexof based on #3516
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",17,0,src/ast/rewriter/seq_rewriter.cpp,1,1,1,0,4,2336,1,1571,55,0,5,0,0,1
+z3,f810f25d8d612b00e2282e80bac7f909d0de3809,da8182419b6e3a1638bf5e31a5e76cc409988ee3,Murphy Berzish,murphy.berzish@gmail.com,2020/2/17 15:19,1581923990,z3str3: fix indexof out-of-bounds axiom terms,7,7,src/smt/theory_str.cpp,1,1,1,0,4,7798,1,1624,2,0,11,0,1,1
+z3,d41ecda03ef7dcc05d3538595c6ddd398809a531,c92a63690d96c20ded688c2eab5363d05928e598,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/29 17:47,1590745644,"enable parsing (_ char ..)
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",12,1,"src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h, src/parsers/smt2/smt2parser.cpp",3,2,2,1.140115679,4,4453,3,2775,56,0,6,0,0,1
+z3,21c4d451d8778d0a987096eb3a55d1d77f18c58c,6f0a3673574932e5105a5c136bafc148b25fe03c,Murphy Berzish,mtrberzi@users.noreply.github.com,2020/5/16 16:31,1589617907,add SMTLIB2.6 names for QF_SLIA and string-int conversion operators (#4341),14,7,"src/ast/seq_decl_plugin.cpp, src/cmd_context/check_logic.cpp, src/smt/smt_setup.cpp, src/solver/smt_logics.cpp",4,4,4,1.781416403,4,2621,4,2394.5,3,0,22,0,0,1
+z3,1ab2ad07be50cacf4bf04545411338e6fdfccddc,4753d93bb721ab4eeb332c15659b1d4dfab19211,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/16 14:00,1589608802,"add some of the SMTLIB2.6 conventions and features to strings
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",27,6,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h",4,1,2,1.477736943,4,4070,4,2193.5,59,0,8,0,0,1
+z3,e388055a338bbe9c4b76856be055e22dbae86717,bfb5c95b9aa8d2d366160a89c27c12abe46c288c,Nikolaj Bjorner,nbjorner@microsoft.com,2020/6/2 13:30,1591075818,"use op-cache for is-nullable
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",18,7,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.h",3,1,2,0.48217919,4,4063,3,2020.333333,63,0,9,0,0,1
+z3,24a9ca3226b46d2739da1c668ca04d7399319ec2,9dd8ebb474aa291c494f31625a602d429579c376,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/27 10:10,1590545413,"fix build
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",23,21,"src/ast/rewriter/arith_rewriter.cpp, src/ast/rewriter/arith_rewriter.h, src/smt/seq_regex.cpp",3,2,2,1.324731858,4,2124,3,1848.333333,66,0,23,0,1,1
+z3,f18bd7bf08c53ff6ca34d862b71f5956726e8502,01299dacbfcde7162fe6dbc6543f22510c1a576b,Murphy Berzish,murphy.berzish@gmail.com,2020/2/27 18:56,1582801018,z3str3: check relevancy of subformulas for negated non-relevant formulas in bitvector model construction,12,2,src/smt/theory_str_mc.cpp,1,1,1,0,4,2112,1,44,7,0,14,0,0,1
+z3,ff6b3304f8daf571cf3a122881749d0289bf757d,faf39347490b19d7746335442d5ff1d7ee896c46,Murphy Berzish,murphy.berzish@gmail.com,2020/1/16 15:27,1579159652,z3str3: add bitvector model construction algorithm,1427,35,"src/smt/params/smt_params.cpp, src/smt/params/smt_params_helper.pyg, src/smt/params/theory_str_params.cpp, src/smt/params/theory_str_params.h, src/smt/theory_str.cpp, src/smt/theory_str.h",6,1,2,0.745144797,4,9354,6,1773.333333,8,0,15,0,0,1
+z3,2e2e98925ac45933e696af037ac65e49df177c26,42ed1e62a9ba5628ff73c902f555a66964759415,Lev Nachmanson,levnach@hotmail.com,2020/6/18 12:16,1592453782,"debug cheap_eqs
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",12,7,src/math/lp/lp_bound_propagator.h,1,1,1,0,4,683,1,378,1,0,3,1,1,1
+z3,8d3caa00fe0936d431a39cb537d29180c8b967e9,e8690d28f819244797ed6584599ee3be171d58fc,Murphy Berzish,mtrberzi@users.noreply.github.com,2020/7/3 17:13,1593767607,z3str3: continue instead of incorrectly giving up in solve_regex_automata (#4556),1,1,src/smt/theory_str_regex.cpp,1,1,1,0,4,1265,1,251,14,0,16,0,0,1
+z3,b9bfa950f69c2be539ec12d61be856c3c1bcaf95,ab92c201064614354565707724f0297f2ef8a8d1,Lev Nachmanson,levnach@hotmail.com,2020/2/22 21:30,1582378209,"add option branch_flip to lp_settings
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",11,10,"src/math/lp/int_branch.cpp, src/math/lp/lp_settings.h, src/smt/params/smt_params_helper.pyg, src/smt/theory_array.cpp, src/smt/theory_lra.cpp",5,2,3,1.845462973,4,4364,5,1322,2,0,21,0,0,1
+z3,747a8ff72a4154c5df5100a41f1bea7b9c83c8e1,c50e869e5ac2a92c848616802c9d4d09d6ede73b,Margus Veanes,veanes@users.noreply.github.com,2020/8/18 20:01,1597752119,"computing and memoizing info for regexes (#4647)
+
+* computing and memoizing info for regex expressions
+
+* computing and memoizing info for regex expressions
+
+* took care of comments of the related pull request
+
+* removed +1 from min_length of ite
+
+* added to_str method for re and fixed STRACE bug in get_info_rec",133,23,"src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h",2,1,1,0.603386264,5,1874,2,2858,0,0,11,1,1,1
+z3,8fda4f904dd45a4fd0a2e784b6f1ee0e6514f246,fce1252145e02640142911bac999b04f1a07b40c,Murphy Berzish,mtrberzi@users.noreply.github.com,2020/6/30 11:20,1593487244,"Z3str3: Add consistency checks for string-integer conversion terms in model construction (#4551)
+
+* z3str3: check consistency of str.to_int in fixed length solver
+
+* z3str3: add similar check for int.to_str as well
+
+* z3str3: refactor string-integer conversion check and add post checks for model construction",199,35,"src/smt/theory_str.cpp, src/smt/theory_str.h, src/smt/theory_str_mc.cpp",3,1,1,0.872018774,5,9040,3,1228,15,0,18,0,1,1
+z3,8f588a9263a4db560b493b7a02a5fd7283bf7454,6524a70c321075068caffc3bac6b463c1b3325e6,Lev Nachmanson,levnach@hotmail.com,2020/6/19 21:36,1592573815,"remove un unnecessary call
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",10,12,src/math/lp/lp_bound_propagator.h,1,1,1,0,5,633,1,379,7,0,5,0,0,1
+z3,f7f9c15676de2c18dfa538db3166836bca0ca0d4,431bb36cf5c1612722e850b8b48cfe53b9aa0043,Lev Nachmanson,levnach@hotmail.com,2020/6/16 11:00,1592276426,"cheap_eqs tree
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",182,71,"src/math/lp/lar_solver.cpp, src/math/lp/lar_solver.h, src/math/lp/lp_bound_propagator.h",3,1,1,0.983142353,5,3141,3,377.3333333,8,0,6,0,0,1
+z3,cb3ebac3dd1c72f99772472f0c89ac5d558eed32,29b3f438bcf82c3e8c3a622dee01ca6e5821fde5,Lev Nachmanson,levnach@hotmail.com,2020/7/1 19:02,1593601350,"cheap_eqs - work on fixed_phase
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",161,118,src/math/lp/lp_bound_propagator.h,1,1,1,0,5,569,1,391,11,0,7,0,1,1
+z3,58f3dce2be92174aedeae32d483fd03a6fb0c55c,5f78ca9b588d3d0a7405e39630d548477f750710,Murphy Berzish,murphy.berzish@gmail.com,2019/11/25 14:28,1574663324,z3str3: negative lengths in get_len_value don't count,1,1,src/smt/theory_str.cpp,1,1,1,0,5,8649,1,1540,18,0,19,0,0,1
+z3,2b929cb31e175a8e1df4680973dcb2c01eab826f,6d12540ceb8de7da344b0266e6a07824913adc5e,Lev Nachmanson,levnach@hotmail.com,2020/4/6 17:37,1586165857,"set arith.solver=6 by default
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",1,1,src/smt/params/smt_params_helper.pyg,1,1,1,0,5,0,1,2681,12,0,20,0,0,1
+z3,9c3f0190f4b74e8b34b73ad64d086888fddeb9a0,cc8cd2cc2f8ffd9206fea56f9aa3fb53bd6069a6,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/23 21:28,1587648499,"na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",58,60,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/smt/theory_seq.cpp, src/util/ref_vector.h",4,3,3,1.310150294,5,5892,4,1884.75,69,0,35,0,0,1
+z3,55df045f85645e38d54274f3591b09d60dd99146,f604fad77971613ae7baa684886f2219f42c2a8c,Murphy Berzish,murphy.berzish@gmail.com,2020/2/20 16:11,1582186305,"z3str3: fix negated str.contains, add reduction for str.at",22,1,src/smt/theory_str_mc.cpp,1,1,1,0,5,2102,1,37,19,0,22,0,1,1
+z3,f3b2a082ae344f3aa719d537c002f02d14c15847,ccebd4db59c78edeca46344e1b4e2402e4368c8d,Murphy Berzish,mtrberzi@users.noreply.github.com,2020/5/28 11:57,1590638242,z3str3: allow leading zeroes in str.to_int (#4381),42,22,src/smt/theory_str.cpp,1,1,1,0,5,7229,1,1725,20,0,23,0,0,1
+z3,3b87cdfd0fd3f5652a8a521bc2d51275a67b9a2b,fe0e042e40d60cb0301f1e9b6cc351e1545883f0,Lev Nachmanson,levnach@hotmail.com,2020/6/11 18:02,1591869756,"move m_fixed_var_table to lar_solver
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",131,141,"src/math/lp/lar_constraints.h, src/math/lp/lar_solver.cpp, src/math/lp/lar_solver.h, src/math/lp/lp_bound_propagator.h, src/math/lp/mps_reader.h, src/smt/theory_lra.cpp",6,2,2,1.769705665,5,7523,6,498.5,13,0,32,0,1,1
+z3,90f5595067605480782840dca92d34ab999848fc,ccda9d56d7e1b91d9561e88c913b0c7c50d32a6d,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/15 15:57,1589529458,"fixes
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",2,0,src/math/lp/explanation.h,1,1,1,0,5,35,1,346,73,0,9,0,1,1
+z3,e254e890a1285f54ab7914d7c4ac3aa7fb6c423b,bd0180925b6e78c231c2f89027d27b269341a6ad,Murphy Berzish,mtrberzi@users.noreply.github.com,2020/5/11 19:41,1589197315,z3str3: don't crash when finding initial bounds for a regex that has no solutions (#4276),3,2,src/smt/theory_str_regex.cpp,1,1,1,0,5,1297,1,198,21,0,25,0,0,1
+z3,c0fbb3137904a5557e77d9aacf8f6ec07929af85,8d16a9a0343c93f52dde26607fa800282b56d52b,Federico Mora Rocha,fmorarocha@gmail.com,2020/6/24 13:46,1592977592,"z3str3: fix Issues 4349, 4354, and 4310 (#4529)
+
+* regex needs lesson; m.mk_eq not ctx.mk_eq
+
+* when unsat core is of size 0, then do naive learning
+
+* remove two extra comments, and correct positive regex learning
+
+* replace magic numbers for fixed-length lessons with constants",36,29,"src/smt/theory_str.cpp, src/smt/theory_str.h, src/smt/theory_str_mc.cpp",3,1,1,0.914175416,6,8906,3,1222,0,0,26,0,1,1
+z3,6ca039c855f2fcf2e3bd1791fe73dd848d872c73,c1a0ce0862b825e3d1d22a2defd23dcf1cda0542,Murphy Berzish,mtrberzi@users.noreply.github.com,2020/4/11 14:36,1586586990,"Z3str3: reset internal data structures in init_search_eh() (#3818)
+
+* z3str3: fixes to solver state between check-sat calls, wip
+
+* z3str3: reset many internal data structures during init_search_eh() to clean up state",111,3,"src/smt/theory_str.cpp, src/smt/theory_str.h",2,1,1,0.127418512,6,8551,2,1678,22,0,27,0,1,1
+z3,56bf4c144b413392b3749c57904498f8c652b510,f3b2a082ae344f3aa719d537c002f02d14c15847,Murphy Berzish,mtrberzi@users.noreply.github.com,2020/5/28 11:57,1590638228,"z3str3: make counterexamples less naive, and check regex membership more efficiently (#4358)
+
+* z3str3: make counterexamples less naive, and check regex membership more efficiently
+
+* z3str3: construct even better counterexamples for regex membership",94,83,"src/smt/theory_str.cpp, src/smt/theory_str_mc.cpp, src/smt/theory_str_regex.cpp",3,1,1,1.571943924,6,9505,3,691.6666667,24,0,28,0,0,1
+z3,44ec259c4ca8bf97e780f75d0bc195b76d391c23,bb26f219fef9e2d4ca2142d36bdaf39931519b43,Nuno Lopes,nlopes@microsoft.com,2020/7/12 17:41,1594546917,remove unneeded constructors (last round),65,276,"src/ast/ast.h, src/math/lp/ul_pair.h, src/muz/rel/dl_bound_relation.h, src/muz/spacer/spacer_context.cpp, src/muz/spacer/spacer_context.h, src/muz/spacer/spacer_manager.h, src/muz/transforms/dl_mk_karr_invariants.cpp, src/muz/transforms/dl_mk_karr_invariants.h, src/opt/opt_solver.cpp, src/qe/qe.h, src/sat/sat_clause.h, src/sat/sat_cutset.h, src/sat/sat_types.h, src/smt/smt_b_justification.h, src/smt/theory_seq.h, src/smt/theory_str.h, src/smt/watch_list.h, src/solver/parallel_tactic.cpp, src/tactic/sls/bvsls_opt_engine.h, src/tactic/sls/sls_tracker.h, src/util/array_map.h, src/util/hwf.h, src/util/inf_eps_rational.h, src/util/inf_int_rational.h, src/util/inf_rational.h, src/util/mpq.h, src/util/mpz.h, src/util/obj_ref.h, src/util/optional.h, src/util/rational.h, src/util/ref.h, src/util/ref_pair_vector.h, src/util/ref_vector.h, src/util/s_integer.h, src/util/stacked_value.h, src/util/uint_set.h, src/util/vector.h",37,10,12,4.389045764,7,14580,37,2210.027027,0,0,60,0,0,1
+z3,3d9d52f7427214f3b1ceecb0ae6683a43e841ab7,c939195c10e2bf9e1d8d39e0e3b14e6ffb695420,calebstanford-msr,65260146+calebstanford-msr@users.noreply.github.com,2020/5/29 16:00,1590739237,"add regex support for reverse and left/right derivative rewriting (#4477)
+
+* partial work on adding 'reverse' (broken code)
+
+* new op codes for derivative and reverse + associated rewrite rules
+
+* incorporate reverses and derivatives in rewriter + some fixes
+
+* enable rewriting str.in_re constraints with right derivative",253,109,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h, src/smt/seq_regex.cpp",5,2,3,0.655022479,8,5373,5,1766.2,0,0,44,0,1,1
+z3,82fd2a062dc3859c44ee005d421eed0dc2fb3369,01279582ff92b88746b7af13939c4767355b6f3b,Lev Nachmanson,levnach@hotmail.com,2020/5/15 12:58,1589518714,"move nla stats to nla_core
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",34,11,"src/math/lp/nla_core.cpp, src/math/lp/nla_core.h, src/math/lp/nla_solver.cpp, src/math/lp/nla_solver.h, src/smt/theory_lra.cpp",5,2,2,1.968293849,8,5468,5,497,19,0,42,0,0,1
+z3,4e01d5b5c10b3524051e7acf396bb6f992b219e9,e938ee33bbb27dfeaca5adc0c18a560d05793794,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/25 14:11,1590387111,"na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",92,17,"src/ast/rewriter/arith_rewriter.cpp, src/ast/rewriter/arith_rewriter.h",2,1,1,0.307456533,8,1841,2,2770,74,0,15,0,0,1
+z3,d09e6eccf0bcdb987e54d414fb9b05a23726ec4d,d13e584706dbc9b3a6684fa38b17366ba7b578a3,Lev Nachmanson,levnach@hotmail.com,2020/6/14 10:29,1592101740,"simplify the fixed var table
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",6,18,"src/math/lp/lar_solver.cpp, src/math/lp/lar_solver.h, src/math/lp/lp_bound_propagator.h",3,1,1,1.158222676,8,3083,3,375.3333333,24,0,12,0,1,1
+z3,ccebd4db59c78edeca46344e1b4e2402e4368c8d,71ea7287bb652be01319f8356f7ca2fc068b0b17,Murphy Berzish,mtrberzi@users.noreply.github.com,2020/5/28 11:57,1590638253,"z3str3: detect and give up when symbolic automaton construction fails (#4384)
+
+typically this will happen due to non-constant terms in a RegLan expression",28,7,"src/smt/theory_str.cpp, src/smt/theory_str.h, src/smt/theory_str_regex.cpp",3,1,1,0.894552209,8,9105,3,1221.666667,27,0,32,0,0,1
+z3,54d981e88fc00b028ab0e0a72caa08acf82b63ef,077f2248ca788cd4f5c7db0ff0db8daa437cf69f,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/5 11:32,1586057573,"fix #3756
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",10,0,src/smt/theory_str.cpp,1,1,1,0,8,7797,1,1672,76,0,33,0,1,1
+z3,3d874313d3297215979b002ea75863d12cc1f4de,f646c9ac11d24c6e2236be7e2658c100edcfb69d,Nikolaj Bjorner,nbjorner@microsoft.com,2019/12/4 10:45,1575427517,fix #2780,2,1,src/smt/theory_lra.cpp,1,1,1,0,8,3232,1,938,77,0,34,0,1,1
+z3,7f3bdea0d5aab4c9c30986ccbdf28745b96d45c4,b0633ecc86943a92a3651ea2eae86b4556d10459,Murphy Berzish,mtrberzi@users.noreply.github.com,2020/6/24 12:14,1592972043,"Z3str3: safety checks for substr and propagate (#4528)
+
+* z3str3: handle str.substr arguments missing arith values in model construction safely
+
+* z3str3: reset propagation vectors on scope pop",19,6,"src/smt/theory_str.cpp, src/smt/theory_str_mc.cpp",2,1,1,0.970950594,8,8300,2,957,30,0,35,0,0,1
+z3,c0a07f922970aa1c4c27e972f6e2885f9ca12350,fae206b738cbbd82069f440f22b00810d5794a15,Nikolaj Bjorner,nbjorner@microsoft.com,2020/8/14 19:29,1597404575,"add command-line help descriptions on tactics
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",65,13,"src/ackermannization/lackr.cpp, src/cmd_context/tactic_cmds.cpp, src/cmd_context/tactic_manager.h, src/shell/main.cpp, src/shell/smtlib_frontend.cpp, src/shell/smtlib_frontend.h, src/solver/parallel_tactic.cpp",7,4,4,2.486110953,8,2104,7,2395.428571,78,0,7,0,0,1
+z3,17b8db95c18897614fff1b9ce3ef9d76972308b5,becf423c77d83793cec53bde936957aea6547723,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/8 16:46,1588927563,"remove level of indirection for context and ast_manager in smt_theory (#4253)
+
+* remove level of indirection for context and ast_manager in smt_theory
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* add request by #4252
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* move to def
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* int
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",750,1257,"src/CMakeLists.txt, src/ast/array_decl_plugin.cpp, src/opt/maxsmt.cpp, src/opt/opt_solver.cpp, src/smt/arith_eq_adapter.cpp, src/smt/arith_eq_adapter.h, src/smt/seq_eq_solver.cpp, src/smt/seq_ne_solver.cpp, src/smt/smt_context.cpp, src/smt/smt_setup.cpp, src/smt/smt_theory.cpp, src/smt/smt_theory.h, src/smt/theory_arith.h, src/smt/theory_arith_aux.h, src/smt/theory_arith_core.h, src/smt/theory_arith_nl.h, src/smt/theory_array.cpp, src/smt/theory_array.h, src/smt/theory_array_base.cpp, src/smt/theory_array_base.h, src/smt/theory_array_full.cpp, src/smt/theory_array_full.h, src/smt/theory_bv.cpp, src/smt/theory_bv.h, src/smt/theory_datatype.cpp, src/smt/theory_datatype.h, src/smt/theory_dense_diff_logic.h, src/smt/theory_dense_diff_logic_def.h, src/smt/theory_diff_logic.h, src/smt/theory_diff_logic_def.h, src/smt/theory_dl.cpp, src/smt/theory_dl.h, src/smt/theory_dummy.cpp, src/smt/theory_dummy.h, src/smt/theory_fpa.cpp, src/smt/theory_fpa.h, src/smt/theory_jobscheduler.cpp, src/smt/theory_jobscheduler.h, src/smt/theory_lra.cpp, src/smt/theory_lra.h, src/smt/theory_pb.cpp, src/smt/theory_pb.h, src/smt/theory_recfun.cpp, src/smt/theory_recfun.h, src/smt/theory_seq.cpp, src/smt/theory_seq.h, src/smt/theory_seq_empty.h, src/smt/theory_special_relations.cpp, src/smt/theory_special_relations.h, src/smt/theory_str.cpp, src/smt/theory_str.h, src/smt/theory_str_mc.cpp, src/smt/theory_str_regex.cpp, src/smt/theory_utvpi.h, src/smt/theory_utvpi_def.h, src/smt/theory_wmaxsat.cpp, src/smt/theory_wmaxsat.h",57,4,4,4.773267829,8,47513,57,2110.508772,85,0,53,0,0,1
+z3,f5b62015fc10d1d065b53a4c9b2d0646df5fee98,b34f841421685050e1592b619a70c5b3757a46a1,Lev Nachmanson,levnach@hotmail.com,2020/3/25 17:44,1585129444,"setting the old defaul options for nla
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",2,2,src/smt/params/smt_params_helper.pyg,1,1,1,0,8,0,1,2669,27,0,37,0,0,1
+z3,d3e4dd69f8c20f7a0ff1e81b03250732aa150604,6a540e8429716b3816155f7a14faf3e455461828,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/3 17:16,1588497406,"add Julia to pipeline (#4199)
+
+* add Julia to pipeline
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",115,59,"azure-pipelines.yml, src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h",3,1,2,0.890052999,8,2637,3,1183.666667,142,0,17,0,0,1
+z3,b8f2cf5b0bf8b40d16647892db7ee273ba0ccbf5,bf28b815faad1e4bfdcb02c24ebc66cd0ab2589a,Murphy Berzish,murphy.berzish@gmail.com,2019/11/29 11:20,1574997647,z3str3: add a method to rewrite-and-assert an axiom to reduce boilerplate,24,14,"src/smt/theory_str.cpp, src/smt/theory_str.h",2,1,1,0.297472249,8,9197,2,1544,32,0,38,0,0,1
+z3,d27a949ae9fa79bd322e79161e4959ce1e3a252a,a6c3c18e744338f8c426147f7b2e8c0a9643e3b1,Nikolaj Bjorner,nbjorner@microsoft.com,2020/1/4 13:29,1578115790,"add files
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",1177,0,"src/sat/sat_cutset.cpp, src/sat/sat_cutset.h, src/sat/sat_cutset_compute_shift.h",3,1,1,0.982624285,8,396,3,-1,145,0,2,0,0,1
+z3,d3c00ca2c3feb9fcf5baef160825ab7c1025e2c4,21c4d451d8778d0a987096eb3a55d1d77f18c58c,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/16 14:26,1589610404,"parse RegLan
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",36,16,"src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h",2,1,1,0.779349837,8,1437,2,2764,148,0,18,0,0,1
+z3,ce1fd26b1939611d5c14fb5ddd1923f319ade0d6,131dfc21011598eddafe3294c7772377fb77b2ca,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/21 21:04,1590066256,na,1,1,src/smt/smt_context.cpp,1,1,1,0,8,3585,1,2768,150,0,39,0,0,1
+z3,274323b818b6217c4520b3a9c8eca2e509edfd0b,f7f9c15676de2c18dfa538db3166836bca0ca0d4,Lev Nachmanson,levnach@hotmail.com,2020/6/15 16:08,1592208533,"cheap_eqs tree
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",28,20,"src/math/lp/bound_analyzer_on_row.h, src/math/lp/lar_solver.h, src/math/lp/lp_bound_propagator.h",3,1,1,1.528368899,8,1303,3,376.3333333,28,0,13,0,0,1
+project,parent_hashes,commit_hash,author_name,author_email,author_date,author_date_unix_timestamp,commit_message,la,ld,fileschanged,nf,ns,nd,entropy,ndev,lt,nuc,age,exp,rexp,sexp,classification,fix,1
+z3,9df6c10ad87ae37c7deba1e7428496dbd5ab0022,2c02264a94d2377ebf5f64162813b7e379446619,Caleb Stanford,caleb.pirsquared@gmail.com,2020/8/13 15:47,1597304856,"Regex solver updates (#4636)
+
+* std::cout debugging statements
+
+* comment out std::cout debugging as this is now a shared fork
+
+* convert std::cout to TRACE statements for seq_rewriter and seq_regex
+
+* add cases to min_length and max_length for regexes
+
+* bug fix
+
+* update min_length and max_length functions for REs
+
+* initial pass on simplifying derivative normal forms by eliminating redundant predicates locally
+
+* add seq_regex_brief trace statements
+
+* working on debugging ref count issue
+
+* fix ref count bug and convert trace statements to seq_regex_brief
+
+* add compact tracing for cache hits/misses
+
+* seq_regex fix cache hit/miss tracing and wrapper around is_nullable
+
+* minor
+
+* label and disable more experimental changes for testing
+
+* minor documentation / tracing
+
+* a few more @EXP annotations
+
+* dead state elimination skeleton code
+
+* progress on dead state elimination
+
+* more progress on dead state elimination
+
+* refactor dead state class to separate self-contained state_graph class
+
+* finish factoring state_graph to only work with unsigned values, and implement separate functionality for expr* logic
+
+* implement get_all_derivatives, add debug tracing
+
+* trace statements for debugging is_nullable loop bug
+
+* fix is_nullable loop bug
+
+* comment out local nullable change and mark experimental
+
+* pretty printing for state_graph
+
+* rewrite state graph to remove the fragile assumption that all edges from a state are added at a time
+
+* start of general cycle detection check + fix some comments
+
+* implement full cycle detection procedure
+
+* normalize derivative conditions to form 'ele <= a'
+
+* order derivative conditions by character code
+
+* fix confusing names m_to and m_from
+
+* assign increasing state IDs from 1 instead of using get_id on AST node
+
+* remove elim_condition call in get_dall_derivatives
+
+* use u_map instead of uint_map to avoid memory leak
+
+* remove unnecessary call to is_ground
+
+* debugging
+
+* small improvements to seq_regex_brief tracing
+
+* fix bug on evil2 example
+
+* save work
+
+* new propagate code
+
+* work in progress on using same seq sort for deriv calls
+
+* avoid re-computing derivatives: use same head var for every derivative call
+
+* use min_length on regexes to prune search
+
+* simple implementation of can_be_in_cycle using rank function idea
+
+* add a disabled experimental change
+
+* minor cleanup comments, etc.
+
+* seq_rewriter cleanup for PR
+
+* typo noticed by Nikolaj
+
+* move state graph to util/state_graph
+
+* re-add accidentally removed line
+
+* clean up seq_regex code removing obsolete functions and comments
+
+* a few more cleanup items
+
+* oops, missed merge change to fix compilation
+
+* disabled change to lift unions to the top level and treat them seperately in seq_regex solver
+
+* added get_overapprox_regex to over-approximate regex membership constraints
+
+* replace calls to is_epsilon with a centrally available method in seq_decl_plugin
+
+* simplifications and modifications in get_overapprox_regex and related
+
+* added approximation support for sequence expressions that use ite
+
+* removed is_app check that was redundant
+
+* tweak differences with upstream
+
+* rewrite derivative leaves
+
+* enable Antimorov-style derivatives via lifting unions in the solver
+
+* TODO placeholders for outputting state graph
+
+* change order in seq_regex propagate_in_re
+
+* implement a more restricted form of Antimorov derivatives via a special op code to indicate lifting unions
+
+* minor
+
+* new Antimorov optimizations based on BDD compatibility checking
+
+* seq regex tracing for # of derivatives
+
+* fix get_cofactors (currently this fix is buggy)
+
+* partially revert get_cofactors buggy change
+
+* re-implement get_cofactors to more efficiently explore nodes in the derivative expression
+
+* dgml generation for state graph
+
+* fix release build
+
+* improved dgml output
+
+* bug fixes in dgml generation
+
+* dot output support for state_graph and moved dgml and dot output under CASSERT
+
+* updated tracing of what regex corresponds to what state id with /tr:state_graph
+
+* clean up & document Antimorov derivative support
+
+* remove op cache tracing
+
+* remove re_rank experimental idea
+
+* small fix
+
+* fix Antimorov derivative (important change for the good performance)
+
+* remove unused and unnecessary code
+
+* implemented simpler efficient get_cofactors alternative mk_deriv_accept
+
+* simplifications in propagate_accept, and trace unusual cases
+
+* document the various seq_regex tracing & debugging command-line options
+
+* fix debug build (broken tracing)
+
+* guard eager Antimorov lifting for possible disabling
+
+* fix bug in propagate_accept Rule 1
+
+* disable eager version of Antimorov lifting for performance reasons
+
+* remove some remaining obsolete comments
+
+Co-authored-by: calebstanford-msr <t-casta@microsoft.com>
+Co-authored-by: Margus Veanes <margus@microsoft.com>",551,135,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h, src/smt/seq_regex.cpp, src/smt/seq_regex.h, src/util/state_graph.cpp",7,3,4,1.868148704,1,6838,7,1329.285714,0,0,0,1,1,1
+z3,becf423c77d83793cec53bde936957aea6547723,fdc87f286f83ea0be6cb90663f3f9f4393c04077,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/9 17:40,1589017202,"na (#4254)
+
+* remove level of indirection for context and ast_manager in smt_theory
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* add request by #4252
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* move to def
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* int
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4251
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4255
+
+* fix #4257
+
+* add code to debug #4246
+
+* restore new solver as default
+
+* na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4246
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",269,231,"src/ackermannization/ackr_helper.h, src/ackermannization/lackr.cpp, src/ackermannization/lackr.h, src/math/lp/nla_basics_lemmas.cpp, src/math/lp/nla_common.cpp, src/math/lp/nla_common.h, src/math/lp/nla_core.cpp, src/math/lp/nla_core.h, src/math/lp/nla_intervals.cpp, src/math/lp/nla_monotone_lemmas.cpp, src/math/lp/nla_order_lemmas.cpp, src/math/lp/nla_order_lemmas.h, src/math/lp/nla_tangent_lemmas.cpp, src/smt/params/smt_params_helper.pyg, src/smt/smt_consequences.cpp, src/smt/smt_context.h, src/smt/theory_lra.cpp, src/solver/solver2tactic.cpp",18,4,5,3.001166649,2,9492,18,961.2222222,0,0,1,1,1,1
+z3,780346c7ca86a6f8ab9ac6fe4ecb032cc8b5c52b,e63992c8bd99ce0fbc1c76575646387f8411c216,Nikolaj Bjorner,nbjorner@microsoft.com,2020/7/24 15:46,1595576814,"fix #4589
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",14,3,"src/ast/datatype_decl_plugin.cpp, src/ast/seq_decl_plugin.cpp, src/smt/seq_axioms.cpp",3,2,2,1.548565226,2,3059,3,1921,18,0,3,0,1,1
+z3,0d004b5232d8f7ff6e8904e26adee09c6e19a27c,489448b8698bae7e6937b152df309c107392b5fc,Nikolaj Bjorner,nbjorner@microsoft.com,2019/11/30 18:05,1575108324,"fix #2762, fix #2750, add iterative unrolling to help on termination on sat instances (to address non-termination in #2759 and #2762)
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",55,46,"src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h, src/smt/theory_seq.cpp",3,2,2,0.684501389,2,6857,3,2215,21,0,5,0,1,1
+z3,0a97f37be504331354b1db322d75507e125612a5,1796fc32f5cd0c38c1399bac759e993b2e0cb852,Nikolaj Bjorner,nbjorner@microsoft.com,2020/3/12 10:16,1583979408,"breaking change to fix #3062 #3147 #2896 #2937 #3105
+
+This moves handling of contains into an axiomatization that unfolds on demand.
+The previous handling, based on rewriting, proved too brittle. While it simplifies how contains is handled, it is likely to introduce regressions in terms of what constraints can now be handled.",54,12,src/smt/theory_seq.cpp,1,1,1,0,2,5687,1,1556,24,0,4,0,1,1
+z3,0e78f092b5ffb4f866cbafd4fc1950363aa232c7,ae8c6acc1a5651571fc48e89be901214a978e7e2,Lev Nachmanson,levnach@hotmail.com,2020/4/7 15:21,1586244092,"fill columns to fill in random update as in theory_arith_aux.h
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",45,5,"src/math/lp/random_updater_def.h, src/smt/theory_lra.cpp",2,2,2,0.327444919,3,3582,2,685.5,0,0,6,0,0,1
+z3,ee1d393150775e3c26cbafc195a0222ca925e83f,e67112f289aba5e8e6640cd7d8373a2e592ea8d6,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/28 20:19,1588076360,NYI control paths,22,8,"src/ackermannization/lackr_model_converter_lazy.cpp, src/muz/spacer/spacer_antiunify.cpp, src/smt/asserted_formulas.cpp, src/smt/smt_induction.cpp, src/smt/theory_seq.cpp, src/solver/solver_na2as.h, src/tactic/sls/sls_tracker.h",7,5,5,2.211537134,3,5171,7,1719.714286,25,0,8,0,0,1
+z3,835b57b77584e0ec22a0976806b392447283763f,b04c97458daa2d8dc3a460df6a5fdc5936188447,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/14 17:34,1586856854,"na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",4,0,src/ast/rewriter/seq_rewriter_params.pyg,1,1,1,0,3,0,1,-1,32,0,3,0,0,1
+z3,f94abf6512168bcd4a46f1255406b11d81a1909f,886f4cbee08f3e6f4fc06379a94d9471ce7ec86e,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/22 14:57,1587538663,"fix #4029 - propagate digit literals on all units if they haven't already been propagated
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",21,11,src/smt/theory_seq.cpp,1,1,1,0,3,3027,1,1597,33,0,7,0,1,1
+z3,b8bf6087ffeff104941a61d9d13b698daf1a75ef,3e9479d01a8c709138e051ad1932697db9a9913e,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/17 18:21,1587118900,"a lot of seq churn
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",388,282,"src/ast/rewriter/bv_trailing.cpp, src/ast/rewriter/bv_trailing.h, src/smt/seq_axioms.cpp, src/smt/seq_axioms.h, src/smt/seq_skolem.cpp, src/smt/seq_skolem.h, src/smt/smt_theory.h, src/smt/theory_seq.cpp, src/smt/theory_seq.h, src/util/trail.h",10,3,3,2.000145385,3,7387,10,1089,34,0,13,0,0,1
+z3,339a2568b20b54a24ea324ab88b9e23a3da28e7d,fcc34a07b2ada3fde8f124172e20031de778ba50,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/19 12:36,1587270994,"fix #4019
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",16,12,src/smt/seq_axioms.cpp,1,1,1,0,3,497,1,1,44,0,9,0,1,1
+z3,d13e584706dbc9b3a6684fa38b17366ba7b578a3,09516d74f638a57cf09c3551734cd94e5949a6bc,Lev Nachmanson,levnach@hotmail.com,2020/6/14 15:50,1592121044,"change the default for cheap eqs to table
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",1,1,src/smt/params/smt_params_helper.pyg,1,1,1,0,3,0,1,2750,2,0,10,0,0,1
+z3,e938ee33bbb27dfeaca5adc0c18a560d05793794,a97bc65af460e6b796b925dbbe667904c3fa431c,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/25 15:10,1590390645,"hoist co-factors eagerly without adding axioms
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",94,68,"src/ast/rewriter/seq_rewriter.cpp, src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h, src/smt/seq_regex.cpp, src/smt/seq_regex.h, src/smt/theory_seq.cpp",6,2,3,1.447893456,3,7888,6,1468.333333,45,0,16,0,0,1
+z3,1ab2ad07be50cacf4bf04545411338e6fdfccddc,4753d93bb721ab4eeb332c15659b1d4dfab19211,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/16 14:00,1589608802,"add some of the SMTLIB2.6 conventions and features to strings
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",27,6,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h",4,1,2,1.477736943,3,4070,4,2193.5,51,0,6,0,0,1
+z3,4392c03b57bb9c46afb055b1b25e73563dc8f813,b4f994b5c8fb319ec7fd114230ed6430d252fef6,Nikolaj Bjorner,nbjorner@microsoft.com,2020/7/31 0:40,1596127258,"fix loop
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",2,8,"src/smt/theory_seq.cpp, src/smt/theory_seq.h",2,1,1,0.881290899,3,3423,2,1696,55,0,12,0,1,1
+z3,bb26f219fef9e2d4ca2142d36bdaf39931519b43,f30e8ccec321ca9359e073c2841788032a0b794f,Nuno Lopes,nlopes@microsoft.com,2020/7/12 19:53,1594554802,fix crashes due to my last commit,12,0,"src/tactic/sls/sls_tracker.h, src/util/mpq.h, src/util/mpz.h",3,2,2,1.040852083,4,1913,3,2709.666667,0,0,3,0,1,1
+z3,e1d2b88a82e150ae2f4edda3fd5546de6d251e4f,780346c7ca86a6f8ab9ac6fe4ecb032cc8b5c52b,Nikolaj Bjorner,nbjorner@microsoft.com,2020/7/24 13:22,1595568139,"address model generation bugs raised in #4518 and #4324
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",22,8,"src/ast/seq_decl_plugin.cpp, src/model/seq_factory.h, src/smt/seq_skolem.cpp",3,3,3,1.052981575,4,1551,3,1070.333333,57,0,20,1,1,1
+z3,d4d3971ecdcb3e83d245b67353f9c111ad38a564,3ab74776638004e1c63c36f4fc9ef6da4461a2a2,Nikolaj Bjorner,nbjorner@microsoft.com,2020/2/4 8:55,1580777755,"fix #2920
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",39,40,"src/smt/theory_seq.cpp, src/smt/theory_seq.h",2,1,1,0.097940583,4,6288,2,1519,60,0,14,0,1,1
+z3,55f62fcaed255e47f7557e4f5dd6ecd04abd8e88,876d7c92fba44d7068d28de35ed5e58e98d4db16,Olaf Tomalka,olaf.tomalka@gmail.com,2020/1/22 21:54,1579701250,"Added FreshFunction to Python bindings.
+
+All other declarations can be done use appropriate Fresh*() call,
+or FreshConst() with a desired sort, except Functions.
+
+I've added the abillity to do that in Python bindings using already existing APIs",23,0,src/api/python/z3/z3.py,1,1,1,0,5,4176,1,1225,0,0,0,0,0,1
+z3,0fa04179d0adde1634f5ba1c6e91329072703d4d,73ab95d3383058a2b1a2120e615d3a410e176f7e,Nikolaj Bjorner,nbjorner@microsoft.com,2020/3/26 12:47,1585198050,"remove canonize in seq solver
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",2,0,src/smt/theory_seq.cpp,1,1,1,0,5,5728,1,1570,62,0,15,0,0,1
+z3,a7495876fdaf6265814f35559bf684ae24accb64,477fd3fba0184dbcea33a7b2b3790fa058c613d2,Nikolaj Bjorner,nbjorner@microsoft.com,2020/3/25 4:00,1585080021,"remove model initialization all-together because assumption literals are not connected with model
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",7,18,"src/opt/maxlex.cpp, src/smt/theory_seq.cpp",2,2,2,0.970950594,5,5859,2,996,63,0,16,0,0,1
+z3,41965acaf1f1c3e4b6cc241b7219b217f8b2b8c1,e075f381527b90af937839c4cda4cc7e6f52bfc0,Nikolaj Bjorner,nbjorner@microsoft.com,2020/3/18 19:58,1584532693,"fixing #2956
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",8,12,src/smt/theory_seq.cpp,1,1,1,0,5,5688,1,1562,65,0,17,0,1,1
+z3,76ac9917c8da5d172fba03121af8016090198958,5ced73afb5bc33ddfaf6a195f298985e8e90830e,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/9 14:00,1586412031,"decouple random update with assume eqs
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",11,14,src/smt/theory_lra.cpp,1,1,1,0,5,3505,1,1065,66,0,18,0,0,1
+z3,2b929cb31e175a8e1df4680973dcb2c01eab826f,6d12540ceb8de7da344b0266e6a07824913adc5e,Lev Nachmanson,levnach@hotmail.com,2020/4/6 17:37,1586165857,"set arith.solver=6 by default
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",1,1,src/smt/params/smt_params_helper.pyg,1,1,1,0,5,0,1,2681,3,0,19,0,0,1
+z3,2e714fca7c334bf63e18e5e18daa1cf8f5b339fa,cceae2e3f088e91c921d107a4592a9af2978e4a7,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/7 17:27,1588843642,"old solver as default
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",1,1,src/smt/params/smt_params_helper.pyg,1,1,1,0,5,0,1,2712,67,0,20,0,0,1
+z3,ae5a713e815eb884a7f60d54ac489b14689b90e8,21a31fcd2610f1e3b3163ea432d71e5c4f320193,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/11 2:07,1586542036,"add missing fixed propagations on negated integer inequalities
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",92,94,"src/math/lp/lar_solver.h, src/math/lp/lp_types.h, src/math/lp/nla_core.cpp, src/qe/qe_arith_plugin.cpp, src/smt/smt_case_split_queue.cpp, src/smt/theory_arith_aux.h, src/smt/theory_lra.cpp, src/smt/theory_str_mc.cpp, src/solver/parallel_tactic.cpp",9,4,4,2.2832238,5,13188,9,1186.777778,68,0,25,0,1,1
+z3,e6174c89f312fc6ff29cedc247dbc5daad54bc73,d465938496acee3de07a5b27fada0b500b16c92c,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/15 15:54,1586937280,"add lower bounds on lengths if they are not present
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",3,1,src/smt/theory_seq.cpp,1,1,1,0,5,5657,1,1590,77,0,22,0,0,1
+z3,53c14bd55482ac884885ba48304b7e6859da679c,95a78b245004a823415118a9015b58787ac18ab9,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/22 13:18,1587532735,"updates to seq and bug fixes (#4056)
+
+* na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4037
+
+* nicer output for skolem functions
+
+* more overhaul of seq, some bug fixes
+
+* na
+
+* added offset_eq file
+
+* na
+
+* fix #4044
+
+* fix #4040
+
+* fix #4045
+
+* updated ignore
+
+* new rewrites for indexof based on #4036
+
+* add shortcuts
+
+* updated ne solver for seq, fix #4025
+
+* use pair vectors for equalities that are reduced by seq_rewriter
+
+* use erase_and_swap
+
+* remove unit-walk
+
+* na
+
+* add check for #3200
+
+* nits
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* name a type
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* remove fp check
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* remove unsound axiom instantiation for non-contains
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix rewrites
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4053
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4052
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",1516,1654,".gitignore, README.md, src/ast/ast_ll_pp.cpp, src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.h, src/math/simplex/sparse_matrix.h, src/math/simplex/sparse_matrix_def.h, src/sat/CMakeLists.txt, src/sat/ba_solver.cpp, src/sat/ba_solver.h, src/sat/sat_config.cpp, src/sat/sat_config.h, src/sat/sat_extension.h, src/sat/sat_params.pyg, src/sat/sat_solver.cpp, src/smt/CMakeLists.txt, src/smt/seq_axioms.cpp, src/smt/seq_axioms.h, src/smt/seq_eq_solver.cpp, src/smt/seq_ne_solver.cpp, src/smt/seq_offset_eq.cpp, src/smt/seq_offset_eq.h, src/smt/seq_skolem.cpp, src/smt/seq_skolem.h, src/smt/smt_conflict_resolution.cpp, src/smt/smt_enode.h, src/smt/smt_justification.cpp, src/smt/smt_setup.cpp, src/smt/smt_theory.h, src/smt/theory_arith_nl.h, src/smt/theory_recfun.cpp, src/smt/theory_seq.cpp, src/smt/theory_seq.h, src/tactic/bv/bvarray2uf_tactic.cpp, src/util/ref_pair_vector.h, src/util/scoped_vector.h",39,6,8,3.603726902,5,25183,38,1597.189189,78,0,39,1,1,1
+z3,d5eef9dd8b69a2eda4accdbf53f148f85d630b0e,501aa7927dba13a90e3fc9526c01a9d06e1704e3,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/17 6:14,1587075292,"split into seq_axioms and seq_skolem
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",1064,860,"src/ast/seq_decl_plugin.cpp, src/smt/CMakeLists.txt, src/smt/seq_axioms.cpp, src/smt/seq_axioms.h, src/smt/seq_skolem.cpp, src/smt/seq_skolem.h, src/smt/smt_theory.cpp, src/smt/smt_theory.h, src/smt/theory_seq.cpp, src/smt/theory_seq.h",10,2,2,2.031647471,5,7879,10,1241.9,117,0,33,0,0,1
+z3,6a45c5d17ce5b450a473902b7bdaa202b416aac6,d372af4782f754b4f134ff82773a511e6814e248,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/30 15:36,1590824177,"add stub for cheap equality propagation
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",131,105,"src/math/lp/bound_analyzer_on_row.h, src/math/lp/lar_core_solver.h, src/math/lp/lar_core_solver_def.h, src/math/lp/lar_solver.cpp, src/math/lp/lp_bound_propagator.h, src/math/lp/lp_core_solver_base_def.h, src/math/lp/lp_primal_core_solver.h, src/math/lp/lu_def.h, src/math/lp/static_matrix.h, src/math/lp/static_matrix_def.h, src/smt/seq_regex.cpp, src/smt/theory_lra.cpp, src/smt/theory_seq.cpp",13,2,2,2.835120588,5,13332,13,489.6153846,127,0,29,0,0,1
+z3,fe0e042e40d60cb0301f1e9b6cc351e1545883f0,06826adec3bd594a0eb65a091619333c3b6c9acb,Lev Nachmanson,levnach@hotmail.com,2020/6/12 12:27,1591936045,"fix the race in add_var_bound and add_def_constraint
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",63,29,"src/math/lp/lar_solver.cpp, src/math/lp/lar_solver.h, src/smt/theory_lra.cpp",3,2,2,1.466134172,5,6096,3,625.6666667,4,0,31,0,1,1
+z3,3b0c40044f4c79c75f1778fa601f91848bcdecac,af2f74c05fbe36a8ef6428bbbe3b4d27f9cfdda1,Lev Nachmanson,levnach@hotmail.com,2020/5/19 12:38,1589863124,"smarter explanation.h (#4385)
+
+* smarter explanation.h
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>
+
+* clean explanation API
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>
+
+* suppress warnings
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>
+
+* disable the warnings
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",109,89,"src/math/lp/explanation.h, src/math/lp/gomory.cpp, src/math/lp/hnf_cutter.cpp, src/math/lp/indexed_value.h, src/math/lp/int_branch.cpp, src/math/lp/int_gcd_test.cpp, src/math/lp/lar_solver.cpp, src/math/lp/nla_core.cpp, src/math/lp/nla_intervals.cpp, src/math/lp/nra_solver.cpp, src/math/lp/square_sparse_matrix_def.h, src/math/lp/var_eqs.h, src/smt/theory_lra.cpp, src/test/lp/gomory_test.h, src/test/lp/lp.cpp, src/test/lp/nla_solver_test.cpp",16,3,3,3.025145542,5,13816,16,426.125,7,0,33,0,0,1
+z3,4e01d5b5c10b3524051e7acf396bb6f992b219e9,e938ee33bbb27dfeaca5adc0c18a560d05793794,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/25 14:11,1590387111,"na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",92,17,"src/ast/rewriter/arith_rewriter.cpp, src/ast/rewriter/arith_rewriter.h",2,1,1,0.307456533,5,1841,2,2770,140,0,10,0,0,1
+z3,976e4c91b0f151483e3cf047e294fb5e58ef7580,6cfbda0f088bcfa708634e7df672fb0930046b67,Nikolaj Bjorner,nbjorner@microsoft.com,2020/7/30 15:26,1596093992,"remove automata references
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",12,350,"src/smt/params/smt_params_helper.pyg, src/smt/params/theory_seq_params.cpp, src/smt/params/theory_seq_params.h, src/smt/theory_seq.cpp, src/smt/theory_seq.h",5,1,2,0.455104634,5,3467,5,1542.8,142,0,28,0,0,1
+z3,b1824fea1042e37f701bf9f778ce060ff9019234,aab50ff3f53da7315548e9fb59dbb913573442c1,Nikolaj Bjorner,nbjorner@microsoft.com,2020/7/21 15:50,1595317819,"fixing bugs reported in #4518
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",70,12,"src/smt/seq_axioms.cpp, src/smt/seq_eq_solver.cpp, src/smt/seq_skolem.h, src/smt/theory_seq.cpp, src/smt/theory_seq.h",5,1,1,1.867955909,5,5795,5,731,147,0,29,1,1,1
+z3,74f0665a0bf605367627737ef9e58aaf066944e1,e8cfbb41d36a91e13eac13bf8a978134fa2ff3de,Nikolaj Bjorner,nbjorner@microsoft.com,2020/1/12 17:22,1578820979,"missing length constraint for at fixes #2852
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",2,1,src/smt/theory_seq.cpp,1,1,1,0,5,5500,1,1496,152,0,30,0,1,1
+z3,f5b62015fc10d1d065b53a4c9b2d0646df5fee98,b34f841421685050e1592b619a70c5b3757a46a1,Lev Nachmanson,levnach@hotmail.com,2020/3/25 17:44,1585129444,"setting the old defaul options for nla
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",2,2,src/smt/params/smt_params_helper.pyg,1,1,1,0,5,0,1,2669,23,0,31,0,0,1
+z3,f92050c7e5bbe5dfb13aff02fdb30b9270f39c33,73d73e6c953dd0d63d76c1dca7f88bc04ccf4565,Nikolaj Bjorner,nbjorner@microsoft.com,2020/3/25 13:29,1585114176,"enhance rewriting for indexof based on #3516
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",17,0,src/ast/rewriter/seq_rewriter.cpp,1,1,1,0,5,2336,1,1571,153,0,11,0,0,1
+z3,2494709e98340887a0962a9992a97a8688e2d9e6,601b3998f38c5c92bd54185f8344251b5206a639,Nikolaj Bjorner,nbjorner@microsoft.com,2020/3/23 18:59,1584961147,"fix #3430
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",6,0,src/smt/theory_seq.cpp,1,1,1,0,5,5697,1,1567,154,0,32,0,1,1
+z3,f04dfa71a6fc1431125f96c88305bd34ce8db366,57f622acc151d3cf1ed0db565c19dbe22b42baae,Lev Nachmanson,levnach@hotmail.com,2020/4/9 11:44,1586403856,"fixes in random_update()
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",33,48,"src/math/lp/random_updater.h, src/math/lp/random_updater_def.h",2,1,1,0.28376897,5,74,2,310,24,0,7,0,1,1
+z3,d3e4dd69f8c20f7a0ff1e81b03250732aa150604,6a540e8429716b3816155f7a14faf3e455461828,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/3 17:16,1588497406,"add Julia to pipeline (#4199)
+
+* add Julia to pipeline
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",115,59,"azure-pipelines.yml, src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h",3,1,2,0.890052999,5,2637,3,1183.666667,155,0,12,0,0,1
+z3,99f20c59e4a12d61d664e10c5c96d44f3b58384a,2da7a8dd704b0e2d334ed686ea59a2ef4a48a0bf,Nikolaj Bjorner,nbjorner@microsoft.com,2020/6/1 20:12,1591013531,"fix #4491
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",1,1,src/ast/rewriter/arith_rewriter.cpp,1,1,1,0,5,1698,1,2777,158,0,13,0,1,1
+z3,ccebd4db59c78edeca46344e1b4e2402e4368c8d,71ea7287bb652be01319f8356f7ca2fc068b0b17,Murphy Berzish,mtrberzi@users.noreply.github.com,2020/5/28 11:57,1590638253,"z3str3: detect and give up when symbolic automaton construction fails (#4384)
+
+typically this will happen due to non-constant terms in a RegLan expression",28,7,"src/smt/theory_str.cpp, src/smt/theory_str.h, src/smt/theory_str_regex.cpp",3,1,1,0.894552209,6,9105,3,1221.666667,0,0,33,0,0,1
+z3,3d9d52f7427214f3b1ceecb0ae6683a43e841ab7,c939195c10e2bf9e1d8d39e0e3b14e6ffb695420,calebstanford-msr,65260146+calebstanford-msr@users.noreply.github.com,2020/5/29 16:00,1590739237,"add regex support for reverse and left/right derivative rewriting (#4477)
+
+* partial work on adding 'reverse' (broken code)
+
+* new op codes for derivative and reverse + associated rewrite rules
+
+* incorporate reverses and derivatives in rewriter + some fixes
+
+* enable rewriting str.in_re constraints with right derivative",253,109,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h, src/smt/seq_regex.cpp",5,2,3,0.655022479,7,5373,5,1766.2,0,0,48,0,1,1
+z3,b2bfb1faea933af69fbaeafb85daf3a2322528c9,34cc60410fce6c4b83dcdca8ee56d24718cae69a,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/17 5:08,1589663316,"additional str/re operators, remove encoding option from zstring
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",210,44,"src/api/api_seq.cpp, src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h, src/math/lp/nla_monotone_lemmas.cpp, src/math/lp/nla_order_lemmas.cpp, src/smt/seq_axioms.cpp, src/smt/seq_axioms.h",9,4,5,2.392606853,7,5335,9,1235.888889,159,0,59,0,0,1
+z3,cf86e6ef73bf64669ccf48cc739e8447d4982c0f,762f265616a9e8b88b7119cbec345da1368c00a6,Lev Nachmanson,levnach@hotmail.com,2020/2/14 10:55,1581648921,"merge with master
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",23,8,"src/math/lp/lar_solver.cpp, src/math/lp/lar_solver.h, src/smt/params/smt_params_helper.pyg",3,2,2,0.993099939,7,2405,3,1046.333333,26,0,45,0,0,1
+z3,489448b8698bae7e6937b152df309c107392b5fc,320d6640b18ccbfd03bc860a42324f09d9ba29f6,Nikolaj Bjorner,nbjorner@microsoft.com,2019/11/30 18:32,1575109939,"ensure unfolding is increased with seq
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",1,1,src/smt/theory_seq.cpp,1,1,1,0,7,5481,1,1453,168,0,37,0,0,1
+z3,d9c09dcdf94411b70bc23f817b67bf526a17724b,67d19cba4a2e28a8721bb3efa7539409d3486fa9,Nikolaj Bjorner,nbjorner@microsoft.com,2020/3/11 14:13,1583907192,"fix #3105 fix #2937
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",1,1,src/smt/theory_seq.cpp,1,1,1,0,7,5662,1,1555,169,0,38,0,1,1
+z3,2e2e98925ac45933e696af037ac65e49df177c26,42ed1e62a9ba5628ff73c902f555a66964759415,Lev Nachmanson,levnach@hotmail.com,2020/6/18 12:16,1592453782,"debug cheap_eqs
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",12,7,src/math/lp/lp_bound_propagator.h,1,1,1,0,7,683,1,378,29,0,10,1,1,1
+z3,19e0285b835931a26edb4fb56892ea897822f477,79b776fee52621aec4a5a042060eab7a81b7853f,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/19 12:00,1587268838,"na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",48,35,"src/smt/seq_axioms.cpp, src/smt/seq_axioms.h, src/smt/theory_seq.cpp, src/smt/theory_seq.h",4,1,1,1.158596471,7,4663,4,797.5,170,0,39,0,0,1
+z3,fd219abe8c3ce297aaa11c8d766a37477ee73f98,c165f69248c2610981d610d9ae488ba801cd7841,Nikolaj Bjorner,nbjorner@microsoft.com,2020/3/26 9:17,1585185459,"fix #3525
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",56,16,"src/ast/ast.cpp, src/smt/theory_seq.cpp, src/tactic/core/dom_simplify_tactic.cpp",3,3,3,1.12817586,7,9196,3,1740.666667,174,0,59,0,1,1
+z3,c722962124946eb197f9ddab0cf718f85c2a4712,22aee4d08dc5fe6cbb656b04d13f20560d416c63,Nikolaj Bjorner,nbjorner@microsoft.com,2020/8/24 17:45,1598262350,"fix issue in #4655
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",83,41,"src/ast/euf/euf_egraph.cpp, src/ast/euf/euf_egraph.h, src/ast/euf/euf_enode.h, src/smt/theory_seq.cpp, src/test/egraph.cpp",5,3,3,1.765306552,7,3451,5,344.2,177,0,59,0,1,1
+z3,8f588a9263a4db560b493b7a02a5fd7283bf7454,6524a70c321075068caffc3bac6b463c1b3325e6,Lev Nachmanson,levnach@hotmail.com,2020/6/19 21:36,1592573815,"remove un unnecessary call
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",10,12,src/math/lp/lp_bound_propagator.h,1,1,1,0,7,633,1,379,30,0,11,0,0,1
+z3,d41ecda03ef7dcc05d3538595c6ddd398809a531,c92a63690d96c20ded688c2eab5363d05928e598,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/29 17:47,1590745644,"enable parsing (_ char ..)
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",12,1,"src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h, src/parsers/smt2/smt2parser.cpp",3,2,2,1.140115679,7,4453,3,2775,182,0,18,0,0,1
+z3,e388055a338bbe9c4b76856be055e22dbae86717,bfb5c95b9aa8d2d366160a89c27c12abe46c288c,Nikolaj Bjorner,nbjorner@microsoft.com,2020/6/2 13:30,1591075818,"use op-cache for is-nullable
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",18,7,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.h",3,1,2,0.48217919,7,4063,3,2020.333333,185,0,19,0,0,1
+z3,cb3ebac3dd1c72f99772472f0c89ac5d558eed32,29b3f438bcf82c3e8c3a622dee01ca6e5821fde5,Lev Nachmanson,levnach@hotmail.com,2020/7/1 19:02,1593601350,"cheap_eqs - work on fixed_phase
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",161,118,src/math/lp/lp_bound_propagator.h,1,1,1,0,7,569,1,391,31,0,12,0,1,1
+z3,501aa7927dba13a90e3fc9526c01a9d06e1704e3,a83f72b65715d46f9434502af5322dd13e1e04e5,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/17 7:33,1587080023,"some fixes
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",30,16,"src/ast/rewriter/seq_rewriter.cpp, src/smt/seq_axioms.cpp, src/smt/seq_axioms.h, src/smt/seq_skolem.cpp, src/smt/theory_seq.cpp, src/smt/theory_seq.h",6,2,2,2.02593274,7,8740,6,795.5,188,0,62,0,1,1
+z3,4dd9249a95d11e4fc42aab054d57058e3492871f,1e29ba76d0ad995e3e1fb5aa9450ae1505227dad,Margus Veanes,margus@microsoft.com,2020/8/21 17:34,1598002455,renamed compl method (compl is a reserved c++ keyword) to complement,3,3,"src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h",2,1,1,0.918295834,8,2079,2,2861,0,0,21,0,0,1
+z3,d6ad371934ab24ade0cb99fe6c7e85d2bd51196f,97b480ded34183201fbb3fd371f19cfead7cf696,Lev Nachmanson,levnach@hotmail.com,2020/5/24 17:06,1590311199,"Expl (#4462)
+
+* cleaner API for explanation
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>
+
+* remove an unnecessery check
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>
+
+* expl
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",63,38,"src/math/lp/explanation.h, src/math/lp/lar_solver.cpp, src/smt/theory_lra.cpp, src/test/lp/gomory_test.h",4,3,3,0.853181734,8,5857,4,659.5,32,0,58,0,0,1
+z3,f2015b3f49552dd6ececa1bf364189b67d67b32b,ce0ccc2e9ef9b5c71312a08795575cbd11c75c11,Nikolaj Bjorner,nbjorner@microsoft.com,2020/1/24 16:17,1579853867,"fix #2860
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",218,32,"src/ast/seq_decl_plugin.h, src/smt/params/smt_params_helper.pyg, src/smt/params/theory_seq_params.cpp, src/smt/params/theory_seq_params.h, src/smt/theory_seq.cpp, src/smt/theory_seq.h",6,2,3,0.48936293,8,6653,6,1570.833333,194,0,66,0,1,1
+z3,34ae55f4f50e4b616470518841f8183b88f48c90,78feac44655fd322c087d41da85b3f60b2d47fb4,Nikolaj Bjorner,nbjorner@microsoft.com,2019/12/23 19:36,1577100973,"different kind of loop
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",15,11,src/smt/theory_seq.cpp,1,1,1,0,8,5499,1,1476,200,0,45,0,0,1
+z3,b703d2786cb1261e999c6ed46cfbbe0ae402343a,8f588a9263a4db560b493b7a02a5fd7283bf7454,Lev Nachmanson,levnach@hotmail.com,2020/6/19 15:05,1592550302,"fix the build
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",0,2,src/math/lp/lp_bound_propagator.h,1,1,1,0,8,635,1,379,36,0,14,0,1,1
+z3,3b87cdfd0fd3f5652a8a521bc2d51275a67b9a2b,fe0e042e40d60cb0301f1e9b6cc351e1545883f0,Lev Nachmanson,levnach@hotmail.com,2020/6/11 18:02,1591869756,"move m_fixed_var_table to lar_solver
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",131,141,"src/math/lp/lar_constraints.h, src/math/lp/lar_solver.cpp, src/math/lp/lar_solver.h, src/math/lp/lp_bound_propagator.h, src/math/lp/mps_reader.h, src/smt/theory_lra.cpp",6,2,2,1.769705665,8,7523,6,498.5,37,0,61,0,1,1
+z3,785c9a18cab28b9adfc71ec981f7452fd65279fd,9ea1cf3c5ce9baac66ae6e97e8a3a45604c1fc34,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/25 13:13,1587791605,"na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",497,4,"src/ast/CMakeLists.txt, src/ast/value_generator.cpp, src/ast/value_generator.h, src/model/datatype_factory.cpp, src/test/CMakeLists.txt, src/test/main.cpp, src/test/value_generator.cpp, src/util/scoped_ptr_vector.h",8,4,4,1.165463564,8,825,8,1289.75,201,0,31,0,0,1
+z3,9c3f0190f4b74e8b34b73ad64d086888fddeb9a0,cc8cd2cc2f8ffd9206fea56f9aa3fb53bd6069a6,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/23 21:28,1587648499,"na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",58,60,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/smt/theory_seq.cpp, src/util/ref_vector.h",4,3,3,1.310150294,8,5892,4,1884.75,209,0,76,0,0,1
+z3,50d58114cf37e1b20b03b078d505249cfda73a9d,8f297666fe91a6088819da77999e12da0a598ccb,Nikolaj Bjorner,nbjorner@microsoft.com,2020/4/23 11:40,1587613216,"fix #4073
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",8,7,src/smt/theory_seq.cpp,1,1,1,0,8,3032,1,1598,213,0,48,0,1,1
+project,parent_hashes,commit_hash,author_name,author_email,author_date,author_date_unix_timestamp,commit_message,la,ld,fileschanged,nf,ns,nd,entropy,ndev,lt,nuc,age,exp,rexp,sexp,classification,fix,1
+cvc5,b967cc5c8d84023c1b821c59b7bca736ffda6bed,b58bdc9c5672430cf15914c64129136b24050152,Andrew Reynolds,andrew.j.reynolds@gmail.com,2019/8/22 9:55,1566438931,Local substitutions for context-depdendent simplification in strings (#3204),124,54,"src/theory/strings/theory_strings.cpp, src/theory/strings/theory_strings.h, test/regress/CMakeLists.txt, test/regress/regress2/strings/issue3203.smt2",4,2,3,0.925418439,1,4614,4,1262,0,0,0,0,0,1
+cvc5,e3231523b7bd8da0871b1efb63f23f1b3c4adbe7,f5c8fa4f2edf773d1942110b7fee6411894c6961,Andrew Reynolds,andrew.j.reynolds@gmail.com,2020/2/16 15:47,1581839251,Add temporary global API conversion utilities. (#3759),98,34,"src/api/cvc4cpp.cpp, src/api/cvc4cpp.h",2,1,1,0.632130278,1,3644,2,597.5,4,0,0,0,0,1
+cvc5,eff8e6a30d348e2418f805602d3dd41ac2bc795b,89e00fbfffdbf3f7acde46623bf7a54f455614b5,Andrew Reynolds,andrew.j.reynolds@gmail.com,2019/11/25 17:59,1574675991,Better front-end type checking for SyGuS (#3496),105,8,"src/parser/smt2/smt2.cpp, src/theory/quantifiers/sygus/type_info.cpp, test/regress/CMakeLists.txt, test/regress/regress0/sygus/pLTL-sygus-syntax-err.sy",4,3,4,0.871792237,1,2052,4,1088.75,6,0,2,0,0,1
+cvc5,f61ad6919fc80cbc19fde9c295beb5082a6e0d79,2d478849d704f44f2a1f584dbc98d3731ca4e6ee,Andres Noetzli,andres.noetzli@gmail.com,2019/6/13 18:39,1560422350,"Add lemma for the range of values of str.indexof (#3054)
+
+This commit adds a lemma that the value of `str.indexof(x, y, n)` must
+be between -1 and `str.len(x)`.",9,0,src/theory/strings/theory_strings.cpp,1,1,1,0,2,4283,1,2100,0,0,2,0,0,1
+cvc5,6ba68a1897838f3aefa6cbd254a1262326e446c7,67e5e3d2cf5e381bde65683b1244d1905e969a90,Andrew Reynolds,andrew.j.reynolds@gmail.com,2020/4/30 13:18,1588223906,"Do not mark congruent terms are reduced (#4419)
+
+This fixes a potential model soundness issue in strings where a justification for why a string term was reduced relied on a circular argument. The issue involved ""reduced by congruence"" which states that when f(a) = f(b) ^ a = b in the current context, then one of f(a) or f(b) can be ignored.
+
+However, it may be the case that a is an extended function whose reduction relies on f(b). If we were to assume that f(b) can be ignored due to f(a), then our reduction of f(a) is circular: the reduction of f(a) in the context where a=b relies on itself.
+
+This was causing an incorrect model for QF_S/2020-sygus-qgen/queries/query3214.smt2. The sequence of dependencies was:
+
+[1] (str.contains (str.substr x 1 (+ (- 1) (str.len x))) ""CA"") 
+is congruent to
+(str.contains (str.substr x (+ 2 (str.indexof x ""CA"" 1)) (+ (- 2) (str.len x) (* (- 1) (str.indexof x ""CA"" 1)))) ""CA"")
+in the current context since they are equal and their arguments are equal.
+
+[2] (str.substr x (+ 2 (str.indexof x ""CA"" 1)) (+ (- 2) (str.len x) (* (- 1) (str.indexof x ""CA"" 1))))
+reduction relies on the length constraint:
+(= (str.indexof x ""CA"" 1) (+ (- 2) (str.len sspre_66)))
+
+[3] (str.indexof x ""CA"" 1) 
+reduction relies on:
+(not (str.contains (str.substr x 1 (+ (- 1) (str.len x))) ""CA"")) 
+which was marked congruent above.
+The benchmark now solves in 5 minutes 30 seconds (sat, with a correct model):
+
+andrew@andrew-Latitude-7480:~/misc/strings$ time ajr-cvc4 query3214.smt2 --strings-exp --rewrite-divk --check-models --dump-models
+sat
+(model
+(define-fun x () String ""QACOACA"")
+)",8,3,src/theory/strings/base_solver.cpp,1,1,1,0,2,565,1,85,10,0,3,0,1,1
+cvc5,6118996ec32a66fb8a62f42c79b093fdf82b9ef6,b2fad75b845de71d030705b3c3672009f1e4c2a4,Aina Niemetz,aina.niemetz@gmail.com,2020/2/3 16:42,1580719351,"Increase regression test time limit to 1200s. (#3704)
+
+Fixes #3565.",1,1,test/regress/run_regression.py,1,1,1,0,3,327,1,668,0,0,2,0,1,1
+cvc5,88f1c68a94bd998854cb0bf3a1ce3f516cb774f8,2ac7e8c916bfb33eb73cd90b20a92bef7036ac6b,Andres Noetzli,andres.noetzli@gmail.com,2020/1/9 16:45,1578559538,"Optimize str.substr reduction (#3595)
+
+This commit optimizes the `str.substr` reduction by replacing the
+if-then-else term for the length of the suffix `len(sk2) = ite(len(s) >=
+n+m, len(s) - (n + m), 0)` with `(len(sk2) = len(s) - (n + m) v
+len(sk2) = 0) ^ len(skt) <= m`. Experiments have shown that the latter
+encoding is more efficient.",21,9,src/theory/strings/theory_strings_preprocess.cpp,1,1,1,0,3,467,1,2294,1,0,4,0,1,1
+cvc5,6538957335ecf83af38150054cf80555a57e72d0,d36423fb74e3ec294b222b806cb24b5229e72ed1,Andrew Reynolds,andrew.j.reynolds@gmail.com,2019/4/30 14:11,1556604676,Remove stoi solve rewrite (#2985),25,25,"src/theory/strings/theory_strings_rewriter.cpp, test/regress/CMakeLists.txt, test/regress/regress1/strings/issue2981.smt2, test/regress/regress1/strings/stoi-solve.smt2",4,2,3,1.252347951,3,4343,4,662.25,11,0,8,0,0,1
+cvc5,60ed666d657bfcd69f48821c78a34696796df5fb,5de97c3efe8794bf7e39774686dca81a1982a8ed,Andrew Reynolds,andrew.j.reynolds@gmail.com,2020/6/15 9:40,1592185234,"Do RE derivation inference only for concrete constant RE (#4609)
+
+The RE derive inference was not designed to handle re.comp. This makes the application of this inference more conservative.",9,1,"src/theory/strings/regexp_solver.cpp, test/regress/CMakeLists.txt, test/regress/regress1/strings/issue4608-re-derive.smt2",3,2,3,1.295461844,3,575,3,484.6666667,15,0,10,0,0,1
+cvc5,94f8bafb38ccf380ace36259026a3b0959d13636,0f3e4d1c802e1fe5fd90e712a6382ff9ca2bab34,Andrew Reynolds,andrew.j.reynolds@gmail.com,2020/4/15 7:55,1586908541,"Do not mark string extended functions as eliminated after reduction lemmas (#4306)
+
+The current policy marked extended functions in strings as ""reduced"" (eliminated) when we generated their reduction lemma. The upside is that the solver can effectively ignore them. The downside is that we cannot do context-dependent simplification on them, and hence we miss out conflicts during the remainder of the check-sat call.
+
+This changes the policy so they are not marked as reduced. Instead, reduction lemmas are cached in the standard way while allowing context-dependent simplification.",23,15,"src/theory/strings/extf_solver.cpp, src/theory/strings/extf_solver.h",2,1,1,0.868040399,3,611,2,53,18,0,7,0,0,1
+cvc5,beb4b2d81b47879004e09a4f626b9e4e189e8536,ad0b69e6a6242c2c7a2d060ff70ddd78861ca50a,Andres Noetzli,andres.noetzli@gmail.com,2020/4/28 13:10,1588050616,"Register lower bound for str.to_int (#4408)
+
+This commit changes the term registration for str.to_int terms. Before, we were not sending out any lemmas when registering str.to_int terms. Now, we send a simple lemma that asserts that the value is greater or equal to negative one.",4,0,src/theory/strings/term_registry.cpp,1,1,1,0,3,495,1,12,2,0,8,0,0,1
+cvc5,d0f7a3922e38483908d4b86829241a48d8d8db57,4c471e6e99dcd60d07d8978222956dd0ddd151db,Mathias Preiner,mathias.preiner@gmail.com,2020/2/4 7:49,1580773771,"Fix header installation on MacOS. (#3660)
+
+On MacOS sed -i requires a suffix to be set.",5,3,src/fix-install-headers.sh,1,1,1,0,4,0,1,327,0,0,0,0,1,1
+cvc5,33cabd5c723d33a5aa4c85856af83b141cbbbd87,e3361a428a1b24369d782120de1f050874a8ac44,Andres Noetzli,andres.noetzli@gmail.com,2020/1/29 18:29,1580293755,Better heuristics for marking congruent variables (#3677),17,4,src/theory/strings/theory_strings.cpp,1,1,1,0,4,4007,1,2330,3,0,9,0,0,1
+cvc5,863f229f992cbe02a64889675fc31950e0fe2859,0f9b0dd69bef6a108b1ccc185223733f1d8fa40d,Andrew Reynolds,andrew.j.reynolds@gmail.com,2020/5/21 23:10,1590073824,(proof-new) Minor update to strings solver state (#4510),16,2,"src/theory/strings/solver_state.cpp, src/theory/strings/solver_state.h, src/theory/strings/theory_strings.cpp",3,1,1,1.299736764,4,1313,3,959,20,0,10,0,0,1
+cvc5,8ea1603f55d940e56ab3cbee8177f06200228aaa,967332f464f3e26d43f05bb9c68a0be788337ef6,Andrew Reynolds,andrew.j.reynolds@gmail.com,2020/4/28 11:15,1588043700,"Support the SMT-LIB Unicode string standard by default (#4378)
+
+This PR merges --lang=smt2.6.1 and --lang=smt2.6 (default). It makes it so that 2.6 always expects the syntax of the string standard http://smtlib.cs.uiowa.edu/theories-UnicodeStrings.shtml.
+
+I've updated the regressions so that the 2.6 benchmarks are now compliant with the standard. Some of the <=2.5 benchmarks I've updated to 2.6. Others I have left for now, in particular the ones that rely on special characters or ad-hoc escape sequences. The old formats will be supported in the release but removed shortly afterwards.
+
+This PR is a prerequisite for the release, but not necessarily SMT-COMP (which will use --lang=smt2.6.1 if needed). Notice that we still do not have parsing support for str.replace_re or str.replace_re_all. This is required to be fully compliant.",318,359,"contrib/competitions/smt-comp/run-script-smtcomp-current, contrib/competitions/smt-comp/run-script-smtcomp-current-unsat-cores, src/api/cvc4cpp.cpp, src/options/language.cpp, src/options/language.h, src/options/language.i, src/options/options_template.cpp, src/parser/parser.cpp, src/parser/parser.h, src/parser/smt2/smt2.cpp, src/printer/printer.cpp, src/printer/smt2/smt2_printer.cpp, src/printer/smt2/smt2_printer.h, src/smt/smt_engine.cpp, test/regress/regress0/lang_opts_2_6_1.smt2, test/regress/regress0/strings/bidir_star.smt2, test/regress/regress0/strings/bug001.smt2, test/regress/regress0/strings/char-representations.smt2, test/regress/regress0/strings/code-eval.smt2, test/regress/regress0/strings/code-perf.smt2, test/regress/regress0/strings/code-sat-neg-one.smt2, test/regress/regress0/strings/complement-simple.smt2, test/regress/regress0/strings/escchar_25.smt2, test/regress/regress0/strings/from_code.smt2, test/regress/regress0/strings/gen-esc-seq.smt2, test/regress/regress0/strings/is_digit_simple.smt2, test/regress/regress0/strings/issue1189.smt2, test/regress/regress0/strings/issue2958.smt2, test/regress/regress0/strings/issue3440.smt2, test/regress/regress0/strings/issue3497.smt2, test/regress/regress0/strings/issue3657-evalLeq.smt2, test/regress/regress0/strings/issue4070.smt2, test/regress/regress0/strings/issue4376.smt2, test/regress/regress0/strings/itos-entail.smt2, test/regress/regress0/strings/large-model.smt2, test/regress/regress0/strings/leadingzero001.smt2, test/regress/regress0/strings/loop-wrong-sem.smt2, test/regress/regress0/strings/model-code-point.smt2, test/regress/regress0/strings/model-friendly.smt2, test/regress/regress0/strings/norn-31.smt2, test/regress/regress0/strings/norn-simp-rew.smt2, test/regress/regress0/strings/re-syntax.smt2, test/regress/regress0/strings/re.all.smt2, test/regress/regress0/strings/re_diff.smt2, test/regress/regress0/strings/regexp_inclusion.smt2, test/regress/regress0/strings/regexp_inclusion_reduction.smt2, test/regress/regress0/strings/replace-const.smt2, test/regress/regress0/strings/replaceall-eval.smt2, test/regress/regress0/strings/rewrites-re-concat.smt2, test/regress/regress0/strings/rewrites-v2.smt2, test/regress/regress0/strings/std2.6.1.smt2, test/regress/regress0/strings/strip-endpoint-itos.smt2, test/regress/regress0/strings/tolower-rrs.smt2, test/regress/regress0/strings/type001.smt2, test/regress/regress0/strings/unicode-esc.smt2, test/regress/regress1/fmf/bug723-irrelevant-funs.smt2, test/regress/regress1/strings/artemis-0512-nonterm.smt2, test/regress/regress1/strings/bug615.smt2, test/regress/regress1/strings/bug799-min.smt2, test/regress/regress1/strings/code-sequence.smt2, test/regress/regress1/strings/complement-test.smt2, test/regress/regress1/strings/fmf001.smt2, test/regress/regress1/strings/fmf002.smt2, test/regress/regress1/strings/issue1684-regex.smt2, test/regress/regress1/strings/issue2060.smt2, test/regress/regress1/strings/issue2429-code.smt2, test/regress/regress1/strings/issue2981.smt2, test/regress/regress1/strings/issue2982.smt2, test/regress/regress1/strings/issue3090.smt2, test/regress/regress1/strings/issue3272.smt2, test/regress/regress1/strings/issue3357.smt2, test/regress/regress1/strings/kaluza-fl.smt2, test/regress/regress1/strings/no-lazy-pp-quant.smt2, test/regress/regress1/strings/non_termination_regular_expression4.smt2, test/regress/regress1/strings/norn-13.smt2, test/regress/regress1/strings/norn-360.smt2, test/regress/regress1/strings/norn-ab.smt2, test/regress/regress1/strings/norn-nel-bug-052116.smt2, test/regress/regress1/strings/norn-simp-rew-sat.smt2, test/regress/regress1/strings/nt6-dd.smt2, test/regress/regress1/strings/nterm-re-inter-sigma.smt2, test/regress/regress1/strings/pierre150331.smt2, test/regress/regress1/strings/policy_variable.smt2, test/regress/regress1/strings/query4674.smt2, test/regress/regress1/strings/query8485.smt2, test/regress/regress1/strings/re-agg-total1.smt2, test/regress/regress1/strings/re-agg-total2.smt2, test/regress/regress1/strings/re-all-char-hard.smt2, test/regress/regress1/strings/re-elim-exact.smt2, test/regress/regress1/strings/re-mod-eq.smt2, test/regress/regress1/strings/re-neg-concat-reduct.smt2, test/regress/regress1/strings/re-neg-unfold-rev-a.smt2, test/regress/regress1/strings/re-unsound-080718.smt2, test/regress/regress1/strings/regexp-strat-fix.smt2, test/regress/regress1/strings/regexp001.smt2, test/regress/regress1/strings/regexp002.smt2, test/regress/regress1/strings/regexp003.smt2, test/regress/regress1/strings/reloop.smt2, test/regress/regress1/strings/replaceall-len.smt2, test/regress/regress1/strings/replaceall-replace.smt2, test/regress/regress1/strings/rew-check1.smt2, test/regress/regress1/strings/simple-re-consume.smt2, test/regress/regress1/strings/stoi-400million.smt2, test/regress/regress1/strings/stoi-solve.smt2, test/regress/regress1/strings/str-code-sat.smt2, test/regress/regress1/strings/str-code-unsat-2.smt2, test/regress/regress1/strings/str-code-unsat-3.smt2, test/regress/regress1/strings/str-code-unsat.smt2, test/regress/regress1/strings/string-unsound-sem.smt2, test/regress/regress1/strings/type002.smt2, test/regress/regress1/strings/type003.smt2, test/regress/regress1/strings/username_checker_min.smt2, test/regress/regress2/strings/issue918.smt2, test/regress/regress2/strings/non_termination_regular_expression6.smt2, test/regress/regress2/strings/norn-dis-0707-3.smt2, test/regress/regress2/strings/range-perf.smt2, test/regress/regress2/strings/replaceall-diffrange.smt2, test/regress/regress2/strings/replaceall-len-c.smt2, test/regress/regress2/strings/small-1.smt2, test/unit/api/solver_black.h",120,8,14,6.492796663,4,13200,120,770.0583333,23,0,7,0,0,1
+cvc5,04a8bf833bad57329a4e83b3c5aafb7537de885d,4e310461b2e41f9ccf1426797b5d8b58e27bc1c7,Andrew Reynolds,andrew.j.reynolds@gmail.com,2020/4/10 23:37,1586533063,"Ensure exported sygus solutions match grammar (#4270)
+
+Previously we were doing rewriting/expand definitions during grammar normalization, which overwrote the original sygus operators. The connection to the original grammar was maintained via the SygusPrintCallback utility, which ensured that a sygus term printed in a way that matched the grammar.
+
+We now have several use cases where solutions from SyGuS will be directly exported to the user, including the current use of get-abduct. This means that the terms must match the grammar, and we cannot simply rely on the print callback.
+
+This moves the code to normalize sygus operators to datatypes utils, where the conversion between sygus and builtin terms takes place. This allows a version of this function where isExternal = true, which constructs terms matching the original grammar.
+
+This PR enables the SyGuS API to have an accurate getSynthSolution method. It also will eliminate the need for SygusPrintCallback altogether, once the v1 parser is deleted.",199,146,"src/expr/dtype_cons.h, src/theory/datatypes/theory_datatypes_utils.cpp, src/theory/datatypes/theory_datatypes_utils.h, src/theory/quantifiers/sygus/sygus_grammar_norm.cpp, src/theory/quantifiers/sygus/sygus_grammar_norm.h, src/theory/quantifiers/sygus/synth_conjecture.cpp, test/regress/CMakeLists.txt, test/regress/regress1/sygus/yoni-true-sol.smt2",8,3,5,2.018542906,4,2447,8,444.5,143,0,17,0,0,1
+cvc5,855143cfa1e4cf38f67ff99eba5d59e5a2786120,1cacd328b60713e21af6836c65007ebe3bfffa81,Andres Noetzli,andres.noetzli@gmail.com,2020/4/23 5:58,1587592680,"Introduce best content heuristic for strings (#4382)
+
+* Introduce best content heuristic for strings
+
+This commit introduces a ""best content heuristic"" to perform
+context-dependent simplifications. The high-level idea is that for each
+equivalence class for strings, we compute a representation that is a
+string concatentation of constants and other string terms. For this
+representation, we try to get as many letters in the string constants as
+we can (i.e. the best approximation of the content). This ""best content""
+representation is then used by `EXTF_EVAL` to perform simplifications.
+
+Co-authored-by: Andrew Reynolds <andrew.j.reynolds@gmail.com>",202,76,"src/theory/strings/base_solver.cpp, src/theory/strings/base_solver.h, src/theory/strings/extf_solver.cpp",3,1,1,0.923842594,4,1169,3,72.33333333,4,0,12,0,0,1
+cvc5,80b14c0965678fb91467de287b00a9a1d8a39be5,207245fef36ccad1281fefe9d3f3403cd4f6d15b,Andrew Reynolds,andrew.j.reynolds@gmail.com,2019/10/16 18:44,1571222657,"Solver state for theory of strings (#3181)
+
+This refactors the theory of strings to use a solver state object, which manages state information regarding assertions.
+
+It also deletes some unused/undefined functions in theory_strings.h.
+
+There are no major changes to the behavior of the code or its documentation in this PR.
+
+This is work towards #1881.",879,657,"src/CMakeLists.txt, src/theory/strings/inference_manager.cpp, src/theory/strings/inference_manager.h, src/theory/strings/regexp_solver.cpp, src/theory/strings/regexp_solver.h, src/theory/strings/solver_state.cpp, src/theory/strings/solver_state.h, src/theory/strings/theory_strings.cpp, src/theory/strings/theory_strings.h, src/theory/strings/theory_strings_utils.cpp, src/theory/strings/theory_strings_utils.h",11,2,2,2.177975493,4,6003,11,548.1818182,151,0,13,0,0,1
+cvc5,89e00fbfffdbf3f7acde46623bf7a54f455614b5,bd2793a68e021ab58ab07db0cac67cf3d6806ead,Andrew Reynolds,andrew.j.reynolds@gmail.com,2019/11/27 11:03,1574823829,Fix indexof range lemma (#3499),13,1,"src/theory/strings/theory_strings.cpp, test/regress/CMakeLists.txt, test/regress/regress0/strings/issue3497.smt2",3,2,3,1.198117421,4,3975,3,1024,162,0,21,0,1,1
+cvc5,00badd3a63a2fa568373d5c58553944b579d42bb,3b50dfe623f44e97d85449fa2a7566e81c639b47,Andrew Reynolds,andrew.j.reynolds@gmail.com,2020/5/12 11:47,1589255267,"Do not enable unconstrained simplification if arithmetic is present (#4489)
+
+For now we do not enable unconstrained simplification when arithmetic is present. Post SMT COMP, we should investigate making arithmetic not output lemmas during preprocessing (CVC4/cvc4-wishues#71).",5,3,src/smt/set_defaults.cpp,1,1,1,0,4,1248,1,45,165,0,1,0,0,1
+cvc5,14a7be2b6fe6eb5b938927e20d275fe5c49db55e,22c36b3bceb5d1a73dc0f0355c0a01703db51acc,Andrew Reynolds,andrew.j.reynolds@gmail.com,2020/4/29 13:02,1588136522,"Avoid circular dependencies for justifying reductions in strings extf eval (#4415)
+
+An incorrect answer of ""sat"" could be found after 8 seconds on the given benchmark (with --strings-fmf) due to a circular justification for why an extended function was reduced. In particular, we ran checkExtfInference on the same term twice and then marked it as reduced since we had already seen it. This makes the code more conservative.
+
+Notice I'm making the code doubly conservative in case there is any chance for duplication again (e.g. if ExtTheory provides duplicate terms).",25,3,"src/theory/strings/extf_solver.cpp, test/regress/CMakeLists.txt, test/regress/regress3/strings/unsat-circ-reduce.smt2",3,2,3,1.185616163,4,541,3,342,166,0,23,0,0,1
+cvc5,27ac2ce712b0bcfdef83e2d44dd210f667ab7959,a64866663f10db4ffadd2d48500cda05c4831f0e,Andrew Reynolds,andrew.j.reynolds@gmail.com,2020/3/27 10:23,1585275822,"Do not require that function sorts are first class internally (#4128)
+
+This PR removes the requirement in the NodeManager that argument types to the function sort are first class.
+
+Notice that the new API does this check (as it should): https://github.com/CVC4/CVC4/blob/master/src/api/cvc4cpp.cpp#L2633
+
+Moreover, SyGuS v2 internally requires constructing function types having arguments that are not first class (e.g. regular expression type). This is required to update the regression https://github.com/CVC4/CVC4/blob/master/test/regress/regress1/sygus/re-concat.sy to SyGuS v2.
+
+FYI @abdoo8080 .",41,51,"src/expr/node_manager.cpp, src/expr/node_manager.h",2,1,1,0.965636133,4,1396,2,3759,169,0,1,0,0,1

@@ -1,0 +1,957 @@
+project,parent_hashes,commit_hash,author_name,author_email,author_date,author_date_unix_timestamp,commit_message,la,ld,fileschanged,nf,ns,nd,entropy,ndev,lt,nuc,age,exp,rexp,sexp,classification,fix,is_buggy_commit
+z3,17b8db95c18897614fff1b9ce3ef9d76972308b5,becf423c77d83793cec53bde936957aea6547723,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/8 16:46,1588927563,"remove level of indirection for context and ast_manager in smt_theory (#4253)
+
+* remove level of indirection for context and ast_manager in smt_theory
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* add request by #4252
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* move to def
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* int
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",750,1257,"src/CMakeLists.txt, src/ast/array_decl_plugin.cpp, src/opt/maxsmt.cpp, src/opt/opt_solver.cpp, src/smt/arith_eq_adapter.cpp, src/smt/arith_eq_adapter.h, src/smt/seq_eq_solver.cpp, src/smt/seq_ne_solver.cpp, src/smt/smt_context.cpp, src/smt/smt_setup.cpp, src/smt/smt_theory.cpp, src/smt/smt_theory.h, src/smt/theory_arith.h, src/smt/theory_arith_aux.h, src/smt/theory_arith_core.h, src/smt/theory_arith_nl.h, src/smt/theory_array.cpp, src/smt/theory_array.h, src/smt/theory_array_base.cpp, src/smt/theory_array_base.h, src/smt/theory_array_full.cpp, src/smt/theory_array_full.h, src/smt/theory_bv.cpp, src/smt/theory_bv.h, src/smt/theory_datatype.cpp, src/smt/theory_datatype.h, src/smt/theory_dense_diff_logic.h, src/smt/theory_dense_diff_logic_def.h, src/smt/theory_diff_logic.h, src/smt/theory_diff_logic_def.h, src/smt/theory_dl.cpp, src/smt/theory_dl.h, src/smt/theory_dummy.cpp, src/smt/theory_dummy.h, src/smt/theory_fpa.cpp, src/smt/theory_fpa.h, src/smt/theory_jobscheduler.cpp, src/smt/theory_jobscheduler.h, src/smt/theory_lra.cpp, src/smt/theory_lra.h, src/smt/theory_pb.cpp, src/smt/theory_pb.h, src/smt/theory_recfun.cpp, src/smt/theory_recfun.h, src/smt/theory_seq.cpp, src/smt/theory_seq.h, src/smt/theory_seq_empty.h, src/smt/theory_special_relations.cpp, src/smt/theory_special_relations.h, src/smt/theory_str.cpp, src/smt/theory_str.h, src/smt/theory_str_mc.cpp, src/smt/theory_str_regex.cpp, src/smt/theory_utvpi.h, src/smt/theory_utvpi_def.h, src/smt/theory_wmaxsat.cpp, src/smt/theory_wmaxsat.h",57,4,4,4.773267829,8,47513,57,2110.508772,85,0,53,0,0,1
+z3,becf423c77d83793cec53bde936957aea6547723,fdc87f286f83ea0be6cb90663f3f9f4393c04077,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/9 17:40,1589017202,"na (#4254)
+
+* remove level of indirection for context and ast_manager in smt_theory
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* add request by #4252
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* move to def
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* int
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4251
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4255
+
+* fix #4257
+
+* add code to debug #4246
+
+* restore new solver as default
+
+* na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4246
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",269,231,"src/ackermannization/ackr_helper.h, src/ackermannization/lackr.cpp, src/ackermannization/lackr.h, src/math/lp/nla_basics_lemmas.cpp, src/math/lp/nla_common.cpp, src/math/lp/nla_common.h, src/math/lp/nla_core.cpp, src/math/lp/nla_core.h, src/math/lp/nla_intervals.cpp, src/math/lp/nla_monotone_lemmas.cpp, src/math/lp/nla_order_lemmas.cpp, src/math/lp/nla_order_lemmas.h, src/math/lp/nla_tangent_lemmas.cpp, src/smt/params/smt_params_helper.pyg, src/smt/smt_consequences.cpp, src/smt/smt_context.h, src/smt/theory_lra.cpp, src/solver/solver2tactic.cpp",18,4,5,3.001166649,2,9492,18,961.2222222,2,0,1,1,1,1
+z3,becf423c77d83793cec53bde936957aea6547723,fdc87f286f83ea0be6cb90663f3f9f4393c04077,Nikolaj Bjorner,nbjorner@microsoft.com,2020/5/9 17:40,1589017202,"na (#4254)
+
+* remove level of indirection for context and ast_manager in smt_theory
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* add request by #4252
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* move to def
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* int
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4251
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4255
+
+* fix #4257
+
+* add code to debug #4246
+
+* restore new solver as default
+
+* na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>
+
+* fix #4246
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",269,231,"src/ackermannization/ackr_helper.h, src/ackermannization/lackr.cpp, src/ackermannization/lackr.h, src/math/lp/nla_basics_lemmas.cpp, src/math/lp/nla_common.cpp, src/math/lp/nla_common.h, src/math/lp/nla_core.cpp, src/math/lp/nla_core.h, src/math/lp/nla_intervals.cpp, src/math/lp/nla_monotone_lemmas.cpp, src/math/lp/nla_order_lemmas.cpp, src/math/lp/nla_order_lemmas.h, src/math/lp/nla_tangent_lemmas.cpp, src/smt/params/smt_params_helper.pyg, src/smt/smt_consequences.cpp, src/smt/smt_context.h, src/smt/theory_lra.cpp, src/solver/solver2tactic.cpp",18,4,5,3.001166649,2,9492,18,961.2222222,0,0,1,1,1,1
+z3,99f20c59e4a12d61d664e10c5c96d44f3b58384a,2da7a8dd704b0e2d334ed686ea59a2ef4a48a0bf,Nikolaj Bjorner,nbjorner@microsoft.com,2020/6/1 20:12,1591013531,"fix #4491
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",1,1,src/ast/rewriter/arith_rewriter.cpp,1,1,1,0,5,1698,1,2777,158,0,13,0,1,1
+z3,3b87cdfd0fd3f5652a8a521bc2d51275a67b9a2b,fe0e042e40d60cb0301f1e9b6cc351e1545883f0,Lev Nachmanson,levnach@hotmail.com,2020/6/11 18:02,1591869756,"move m_fixed_var_table to lar_solver
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",131,141,"src/math/lp/lar_constraints.h, src/math/lp/lar_solver.cpp, src/math/lp/lar_solver.h, src/math/lp/lp_bound_propagator.h, src/math/lp/mps_reader.h, src/smt/theory_lra.cpp",6,2,2,1.769705665,5,7523,6,498.5,13,0,32,0,1,1
+z3,3b87cdfd0fd3f5652a8a521bc2d51275a67b9a2b,fe0e042e40d60cb0301f1e9b6cc351e1545883f0,Lev Nachmanson,levnach@hotmail.com,2020/6/11 18:02,1591869756,"move m_fixed_var_table to lar_solver
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",131,141,"src/math/lp/lar_constraints.h, src/math/lp/lar_solver.cpp, src/math/lp/lar_solver.h, src/math/lp/lp_bound_propagator.h, src/math/lp/mps_reader.h, src/smt/theory_lra.cpp",6,2,2,1.769705665,8,7523,6,498.5,37,0,61,0,1,1
+z3,fe0e042e40d60cb0301f1e9b6cc351e1545883f0,06826adec3bd594a0eb65a091619333c3b6c9acb,Lev Nachmanson,levnach@hotmail.com,2020/6/12 12:27,1591936045,"fix the race in add_var_bound and add_def_constraint
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",63,29,"src/math/lp/lar_solver.cpp, src/math/lp/lar_solver.h, src/smt/theory_lra.cpp",3,2,2,1.466134172,5,6096,3,625.6666667,4,0,31,0,1,1
+z3,d09e6eccf0bcdb987e54d414fb9b05a23726ec4d,d13e584706dbc9b3a6684fa38b17366ba7b578a3,Lev Nachmanson,levnach@hotmail.com,2020/6/14 10:29,1592101740,"simplify the fixed var table
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",6,18,"src/math/lp/lar_solver.cpp, src/math/lp/lar_solver.h, src/math/lp/lp_bound_propagator.h",3,1,1,1.158222676,8,3083,3,375.3333333,24,0,12,0,1,1
+z3,d13e584706dbc9b3a6684fa38b17366ba7b578a3,09516d74f638a57cf09c3551734cd94e5949a6bc,Lev Nachmanson,levnach@hotmail.com,2020/6/14 15:50,1592121044,"change the default for cheap eqs to table
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",1,1,src/smt/params/smt_params_helper.pyg,1,1,1,0,4,0,1,2750,0,0,7,0,0,1
+z3,d13e584706dbc9b3a6684fa38b17366ba7b578a3,09516d74f638a57cf09c3551734cd94e5949a6bc,Lev Nachmanson,levnach@hotmail.com,2020/6/14 15:50,1592121044,"change the default for cheap eqs to table
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",1,1,src/smt/params/smt_params_helper.pyg,1,1,1,0,3,0,1,2750,2,0,10,0,0,1
+z3,274323b818b6217c4520b3a9c8eca2e509edfd0b,f7f9c15676de2c18dfa538db3166836bca0ca0d4,Lev Nachmanson,levnach@hotmail.com,2020/6/15 16:08,1592208533,"cheap_eqs tree
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",28,20,"src/math/lp/bound_analyzer_on_row.h, src/math/lp/lar_solver.h, src/math/lp/lp_bound_propagator.h",3,1,1,1.528368899,8,1303,3,376.3333333,28,0,13,0,0,1
+cvc5,60ed666d657bfcd69f48821c78a34696796df5fb,5de97c3efe8794bf7e39774686dca81a1982a8ed,Andrew Reynolds,andrew.j.reynolds@gmail.com,2020/6/15 9:40,1592185234,"Do RE derivation inference only for concrete constant RE (#4609)
+
+The RE derive inference was not designed to handle re.comp. This makes the application of this inference more conservative.",9,1,"src/theory/strings/regexp_solver.cpp, test/regress/CMakeLists.txt, test/regress/regress1/strings/issue4608-re-derive.smt2",3,2,3,1.295461844,3,575,3,484.6666667,15,0,10,0,0,1
+z3,f7f9c15676de2c18dfa538db3166836bca0ca0d4,431bb36cf5c1612722e850b8b48cfe53b9aa0043,Lev Nachmanson,levnach@hotmail.com,2020/6/16 11:00,1592276426,"cheap_eqs tree
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",182,71,"src/math/lp/lar_solver.cpp, src/math/lp/lar_solver.h, src/math/lp/lp_bound_propagator.h",3,1,1,0.983142353,5,3141,3,377.3333333,8,0,6,0,0,1
+z3,2e2e98925ac45933e696af037ac65e49df177c26,42ed1e62a9ba5628ff73c902f555a66964759415,Lev Nachmanson,levnach@hotmail.com,2020/6/18 12:16,1592453782,"debug cheap_eqs
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",12,7,src/math/lp/lp_bound_propagator.h,1,1,1,0,7,683,1,378,29,0,10,1,1,1
+z3,2e2e98925ac45933e696af037ac65e49df177c26,42ed1e62a9ba5628ff73c902f555a66964759415,Lev Nachmanson,levnach@hotmail.com,2020/6/18 12:16,1592453782,"debug cheap_eqs
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",12,7,src/math/lp/lp_bound_propagator.h,1,1,1,0,4,683,1,378,1,0,3,1,1,1
+z3,b703d2786cb1261e999c6ed46cfbbe0ae402343a,8f588a9263a4db560b493b7a02a5fd7283bf7454,Lev Nachmanson,levnach@hotmail.com,2020/6/19 15:05,1592550302,"fix the build
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",0,2,src/math/lp/lp_bound_propagator.h,1,1,1,0,8,635,1,379,36,0,14,0,1,1
+z3,8f588a9263a4db560b493b7a02a5fd7283bf7454,6524a70c321075068caffc3bac6b463c1b3325e6,Lev Nachmanson,levnach@hotmail.com,2020/6/19 21:36,1592573815,"remove un unnecessary call
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",10,12,src/math/lp/lp_bound_propagator.h,1,1,1,0,5,633,1,379,7,0,5,0,0,1
+z3,8f588a9263a4db560b493b7a02a5fd7283bf7454,6524a70c321075068caffc3bac6b463c1b3325e6,Lev Nachmanson,levnach@hotmail.com,2020/6/19 21:36,1592573815,"remove un unnecessary call
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",10,12,src/math/lp/lp_bound_propagator.h,1,1,1,0,7,633,1,379,30,0,11,0,0,1
+z3,e388055a338bbe9c4b76856be055e22dbae86717,bfb5c95b9aa8d2d366160a89c27c12abe46c288c,Nikolaj Bjorner,nbjorner@microsoft.com,2020/6/2 13:30,1591075818,"use op-cache for is-nullable
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",18,7,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.h",3,1,2,0.48217919,4,4063,3,2020.333333,63,0,9,0,0,1
+z3,e388055a338bbe9c4b76856be055e22dbae86717,bfb5c95b9aa8d2d366160a89c27c12abe46c288c,Nikolaj Bjorner,nbjorner@microsoft.com,2020/6/2 13:30,1591075818,"use op-cache for is-nullable
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",18,7,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.h",3,1,2,0.48217919,7,4063,3,2020.333333,185,0,19,0,0,1
+z3,7f3bdea0d5aab4c9c30986ccbdf28745b96d45c4,b0633ecc86943a92a3651ea2eae86b4556d10459,Murphy Berzish,mtrberzi@users.noreply.github.com,2020/6/24 12:14,1592972043,"Z3str3: safety checks for substr and propagate (#4528)
+
+* z3str3: handle str.substr arguments missing arith values in model construction safely
+
+* z3str3: reset propagation vectors on scope pop",19,6,"src/smt/theory_str.cpp, src/smt/theory_str_mc.cpp",2,1,1,0.970950594,8,8300,2,957,30,0,35,0,0,1
+z3,c0fbb3137904a5557e77d9aacf8f6ec07929af85,8d16a9a0343c93f52dde26607fa800282b56d52b,Federico Mora Rocha,fmorarocha@gmail.com,2020/6/24 13:46,1592977592,"z3str3: fix Issues 4349, 4354, and 4310 (#4529)
+
+* regex needs lesson; m.mk_eq not ctx.mk_eq
+
+* when unsat core is of size 0, then do naive learning
+
+* remove two extra comments, and correct positive regex learning
+
+* replace magic numbers for fixed-length lessons with constants",36,29,"src/smt/theory_str.cpp, src/smt/theory_str.h, src/smt/theory_str_mc.cpp",3,1,1,0.914175416,6,8906,3,1222,0,0,26,0,1,1
+z3,8fda4f904dd45a4fd0a2e784b6f1ee0e6514f246,fce1252145e02640142911bac999b04f1a07b40c,Murphy Berzish,mtrberzi@users.noreply.github.com,2020/6/30 11:20,1593487244,"Z3str3: Add consistency checks for string-integer conversion terms in model construction (#4551)
+
+* z3str3: check consistency of str.to_int in fixed length solver
+
+* z3str3: add similar check for int.to_str as well
+
+* z3str3: refactor string-integer conversion check and add post checks for model construction",199,35,"src/smt/theory_str.cpp, src/smt/theory_str.h, src/smt/theory_str_mc.cpp",3,1,1,0.872018774,5,9040,3,1228,15,0,18,0,1,1
+z3,cb3ebac3dd1c72f99772472f0c89ac5d558eed32,29b3f438bcf82c3e8c3a622dee01ca6e5821fde5,Lev Nachmanson,levnach@hotmail.com,2020/7/1 19:02,1593601350,"cheap_eqs - work on fixed_phase
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",161,118,src/math/lp/lp_bound_propagator.h,1,1,1,0,5,569,1,391,11,0,7,0,1,1
+z3,cb3ebac3dd1c72f99772472f0c89ac5d558eed32,29b3f438bcf82c3e8c3a622dee01ca6e5821fde5,Lev Nachmanson,levnach@hotmail.com,2020/7/1 19:02,1593601350,"cheap_eqs - work on fixed_phase
+
+Signed-off-by: Lev Nachmanson <levnach@hotmail.com>",161,118,src/math/lp/lp_bound_propagator.h,1,1,1,0,7,569,1,391,31,0,12,0,1,1
+z3,44ec259c4ca8bf97e780f75d0bc195b76d391c23,bb26f219fef9e2d4ca2142d36bdaf39931519b43,Nuno Lopes,nlopes@microsoft.com,2020/7/12 17:41,1594546917,remove unneeded constructors (last round),65,276,"src/ast/ast.h, src/math/lp/ul_pair.h, src/muz/rel/dl_bound_relation.h, src/muz/spacer/spacer_context.cpp, src/muz/spacer/spacer_context.h, src/muz/spacer/spacer_manager.h, src/muz/transforms/dl_mk_karr_invariants.cpp, src/muz/transforms/dl_mk_karr_invariants.h, src/opt/opt_solver.cpp, src/qe/qe.h, src/sat/sat_clause.h, src/sat/sat_cutset.h, src/sat/sat_types.h, src/smt/smt_b_justification.h, src/smt/theory_seq.h, src/smt/theory_str.h, src/smt/watch_list.h, src/solver/parallel_tactic.cpp, src/tactic/sls/bvsls_opt_engine.h, src/tactic/sls/sls_tracker.h, src/util/array_map.h, src/util/hwf.h, src/util/inf_eps_rational.h, src/util/inf_int_rational.h, src/util/inf_rational.h, src/util/mpq.h, src/util/mpz.h, src/util/obj_ref.h, src/util/optional.h, src/util/rational.h, src/util/ref.h, src/util/ref_pair_vector.h, src/util/ref_vector.h, src/util/s_integer.h, src/util/stacked_value.h, src/util/uint_set.h, src/util/vector.h",37,10,12,4.389045764,7,14580,37,2210.027027,0,0,60,0,0,1
+z3,bb26f219fef9e2d4ca2142d36bdaf39931519b43,f30e8ccec321ca9359e073c2841788032a0b794f,Nuno Lopes,nlopes@microsoft.com,2020/7/12 19:53,1594554802,fix crashes due to my last commit,12,0,"src/tactic/sls/sls_tracker.h, src/util/mpq.h, src/util/mpz.h",3,2,2,1.040852083,4,1913,3,2709.666667,0,0,3,0,1,1
+z3,b1824fea1042e37f701bf9f778ce060ff9019234,aab50ff3f53da7315548e9fb59dbb913573442c1,Nikolaj Bjorner,nbjorner@microsoft.com,2020/7/21 15:50,1595317819,"fixing bugs reported in #4518
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",70,12,"src/smt/seq_axioms.cpp, src/smt/seq_eq_solver.cpp, src/smt/seq_skolem.h, src/smt/theory_seq.cpp, src/smt/theory_seq.h",5,1,1,1.867955909,5,5795,5,731,147,0,29,1,1,1
+z3,e1d2b88a82e150ae2f4edda3fd5546de6d251e4f,780346c7ca86a6f8ab9ac6fe4ecb032cc8b5c52b,Nikolaj Bjorner,nbjorner@microsoft.com,2020/7/24 13:22,1595568139,"address model generation bugs raised in #4518 and #4324
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",22,8,"src/ast/seq_decl_plugin.cpp, src/model/seq_factory.h, src/smt/seq_skolem.cpp",3,3,3,1.052981575,4,1551,3,1070.333333,57,0,20,1,1,1
+z3,780346c7ca86a6f8ab9ac6fe4ecb032cc8b5c52b,e63992c8bd99ce0fbc1c76575646387f8411c216,Nikolaj Bjorner,nbjorner@microsoft.com,2020/7/24 15:46,1595576814,"fix #4589
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",14,3,"src/ast/datatype_decl_plugin.cpp, src/ast/seq_decl_plugin.cpp, src/smt/seq_axioms.cpp",3,2,2,1.548565226,2,3059,3,1921,18,0,3,0,1,1
+z3,8d3caa00fe0936d431a39cb537d29180c8b967e9,e8690d28f819244797ed6584599ee3be171d58fc,Murphy Berzish,mtrberzi@users.noreply.github.com,2020/7/3 17:13,1593767607,z3str3: continue instead of incorrectly giving up in solve_regex_automata (#4556),1,1,src/smt/theory_str_regex.cpp,1,1,1,0,4,1265,1,251,14,0,16,0,0,1
+z3,59d8895d1583496f53205ea4dc81b1b91295fbb3,a74ef394ec98ee42daf1c69f251e036561f64ef6,Nikolaj Bjorner,nbjorner@microsoft.com,2020/7/30 10:19,1596075572,some more rewrites,23,2,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h",2,1,1,0.242292189,1,4016,2,1698,0,0,0,0,0,1
+z3,69b4a819a6b216256a1ac3a518f0d4909e3b8bd4,e0a9848e018b7daec5cc21c333a6513242d1ea15,Nikolaj Bjorner,nbjorner@microsoft.com,2020/7/30 12:33,1596083612,fixing build,8,6,"src/ast/rewriter/arith_rewriter.cpp, src/ast/rewriter/seq_rewriter.cpp",2,1,1,0.985228136,3,5471,2,2266.5,23,0,2,0,1,1
+z3,976e4c91b0f151483e3cf047e294fb5e58ef7580,6cfbda0f088bcfa708634e7df672fb0930046b67,Nikolaj Bjorner,nbjorner@microsoft.com,2020/7/30 15:26,1596093992,"remove automata references
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",12,350,"src/smt/params/smt_params_helper.pyg, src/smt/params/theory_seq_params.cpp, src/smt/params/theory_seq_params.h, src/smt/theory_seq.cpp, src/smt/theory_seq.h",5,1,2,0.455104634,5,3467,5,1542.8,142,0,28,0,0,1
+z3,293b0b8cc25400bbb37e6ab6a4bd6ce6fcfde080,976e4c91b0f151483e3cf047e294fb5e58ef7580,Caleb Stanford,caleb.pirsquared@gmail.com,2020/7/30 16:54,1596099289,"Integrate new regex solver (#4602)
+
+* std::cout debugging statements
+
+* comment out std::cout debugging as this is now a shared fork
+
+* convert std::cout to TRACE statements for seq_rewriter and seq_regex
+
+* add cases to min_length and max_length for regexes
+
+* bug fix
+
+* update min_length and max_length functions for REs
+
+* initial pass on simplifying derivative normal forms by eliminating redundant predicates locally
+
+* add seq_regex_brief trace statements
+
+* working on debugging ref count issue
+
+* fix ref count bug and convert trace statements to seq_regex_brief
+
+* add compact tracing for cache hits/misses
+
+* seq_regex fix cache hit/miss tracing and wrapper around is_nullable
+
+* minor
+
+* label and disable more experimental changes for testing
+
+* minor documentation / tracing
+
+* a few more @EXP annotations
+
+* dead state elimination skeleton code
+
+* progress on dead state elimination
+
+* more progress on dead state elimination
+
+* refactor dead state class to separate self-contained state_graph class
+
+* finish factoring state_graph to only work with unsigned values, and implement separate functionality for expr* logic
+
+* implement get_all_derivatives, add debug tracing
+
+* trace statements for debugging is_nullable loop bug
+
+* fix is_nullable loop bug
+
+* comment out local nullable change and mark experimental
+
+* pretty printing for state_graph
+
+* rewrite state graph to remove the fragile assumption that all edges from a state are added at a time
+
+* start of general cycle detection check + fix some comments
+
+* implement full cycle detection procedure
+
+* normalize derivative conditions to form 'ele <= a'
+
+* order derivative conditions by character code
+
+* fix confusing names m_to and m_from
+
+* assign increasing state IDs from 1 instead of using get_id on AST node
+
+* remove elim_condition call in get_dall_derivatives
+
+* use u_map instead of uint_map to avoid memory leak
+
+* remove unnecessary call to is_ground
+
+* debugging
+
+* small improvements to seq_regex_brief tracing
+
+* fix bug on evil2 example
+
+* save work
+
+* new propagate code
+
+* work in progress on using same seq sort for deriv calls
+
+* avoid re-computing derivatives: use same head var for every derivative call
+
+* use min_length on regexes to prune search
+
+* simple implementation of can_be_in_cycle using rank function idea
+
+* add a disabled experimental change
+
+* minor cleanup comments, etc.
+
+* seq_rewriter cleanup for PR
+
+* typo noticed by Nikolaj
+
+* move state graph to util/state_graph
+
+* re-add accidentally removed line
+
+* clean up seq_regex code removing obsolete functions and comments
+
+* a few more cleanup items
+
+* remove experimental functionality for integration
+
+* fix compilation
+
+* remove some tracing and TODOs
+
+* remove old comment
+
+* update copyright dates to 2020
+
+* feedback from Nikolaj
+
+* use [] for map access
+
+* make state_graph methods constant
+
+* avoid recursion in mark_dead_recursive and mark_live_recursive
+
+* a possible bug fix in propagate_nonempty
+
+* write down list of invariants in state_graph
+
+* implement partial invariant check and insert CASSERT statements
+
+* expand on invariant check and tracing
+
+* finish state graph invariant check
+
+* minor tweaks
+
+* regex propagation: convert first two axioms to propagations
+
+* remove obsolete regex solver functionality
+
+Co-authored-by: calebstanford-msr <t-casta@microsoft.com>",924,259,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.cpp, src/smt/seq_regex.cpp, src/smt/seq_regex.h, src/util/CMakeLists.txt, src/util/state_graph.cpp, src/util/state_graph.h",8,3,4,1.917749947,4,6110,8,938.75,7,0,14,1,1,1
+z3,4392c03b57bb9c46afb055b1b25e73563dc8f813,b4f994b5c8fb319ec7fd114230ed6430d252fef6,Nikolaj Bjorner,nbjorner@microsoft.com,2020/7/31 0:40,1596127258,"fix loop
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",2,8,"src/smt/theory_seq.cpp, src/smt/theory_seq.h",2,1,1,0.881290899,3,3423,2,1696,55,0,12,0,1,1
+z3,9df6c10ad87ae37c7deba1e7428496dbd5ab0022,2c02264a94d2377ebf5f64162813b7e379446619,Caleb Stanford,caleb.pirsquared@gmail.com,2020/8/13 15:47,1597304856,"Regex solver updates (#4636)
+
+* std::cout debugging statements
+
+* comment out std::cout debugging as this is now a shared fork
+
+* convert std::cout to TRACE statements for seq_rewriter and seq_regex
+
+* add cases to min_length and max_length for regexes
+
+* bug fix
+
+* update min_length and max_length functions for REs
+
+* initial pass on simplifying derivative normal forms by eliminating redundant predicates locally
+
+* add seq_regex_brief trace statements
+
+* working on debugging ref count issue
+
+* fix ref count bug and convert trace statements to seq_regex_brief
+
+* add compact tracing for cache hits/misses
+
+* seq_regex fix cache hit/miss tracing and wrapper around is_nullable
+
+* minor
+
+* label and disable more experimental changes for testing
+
+* minor documentation / tracing
+
+* a few more @EXP annotations
+
+* dead state elimination skeleton code
+
+* progress on dead state elimination
+
+* more progress on dead state elimination
+
+* refactor dead state class to separate self-contained state_graph class
+
+* finish factoring state_graph to only work with unsigned values, and implement separate functionality for expr* logic
+
+* implement get_all_derivatives, add debug tracing
+
+* trace statements for debugging is_nullable loop bug
+
+* fix is_nullable loop bug
+
+* comment out local nullable change and mark experimental
+
+* pretty printing for state_graph
+
+* rewrite state graph to remove the fragile assumption that all edges from a state are added at a time
+
+* start of general cycle detection check + fix some comments
+
+* implement full cycle detection procedure
+
+* normalize derivative conditions to form 'ele <= a'
+
+* order derivative conditions by character code
+
+* fix confusing names m_to and m_from
+
+* assign increasing state IDs from 1 instead of using get_id on AST node
+
+* remove elim_condition call in get_dall_derivatives
+
+* use u_map instead of uint_map to avoid memory leak
+
+* remove unnecessary call to is_ground
+
+* debugging
+
+* small improvements to seq_regex_brief tracing
+
+* fix bug on evil2 example
+
+* save work
+
+* new propagate code
+
+* work in progress on using same seq sort for deriv calls
+
+* avoid re-computing derivatives: use same head var for every derivative call
+
+* use min_length on regexes to prune search
+
+* simple implementation of can_be_in_cycle using rank function idea
+
+* add a disabled experimental change
+
+* minor cleanup comments, etc.
+
+* seq_rewriter cleanup for PR
+
+* typo noticed by Nikolaj
+
+* move state graph to util/state_graph
+
+* re-add accidentally removed line
+
+* clean up seq_regex code removing obsolete functions and comments
+
+* a few more cleanup items
+
+* oops, missed merge change to fix compilation
+
+* disabled change to lift unions to the top level and treat them seperately in seq_regex solver
+
+* added get_overapprox_regex to over-approximate regex membership constraints
+
+* replace calls to is_epsilon with a centrally available method in seq_decl_plugin
+
+* simplifications and modifications in get_overapprox_regex and related
+
+* added approximation support for sequence expressions that use ite
+
+* removed is_app check that was redundant
+
+* tweak differences with upstream
+
+* rewrite derivative leaves
+
+* enable Antimorov-style derivatives via lifting unions in the solver
+
+* TODO placeholders for outputting state graph
+
+* change order in seq_regex propagate_in_re
+
+* implement a more restricted form of Antimorov derivatives via a special op code to indicate lifting unions
+
+* minor
+
+* new Antimorov optimizations based on BDD compatibility checking
+
+* seq regex tracing for # of derivatives
+
+* fix get_cofactors (currently this fix is buggy)
+
+* partially revert get_cofactors buggy change
+
+* re-implement get_cofactors to more efficiently explore nodes in the derivative expression
+
+* dgml generation for state graph
+
+* fix release build
+
+* improved dgml output
+
+* bug fixes in dgml generation
+
+* dot output support for state_graph and moved dgml and dot output under CASSERT
+
+* updated tracing of what regex corresponds to what state id with /tr:state_graph
+
+* clean up & document Antimorov derivative support
+
+* remove op cache tracing
+
+* remove re_rank experimental idea
+
+* small fix
+
+* fix Antimorov derivative (important change for the good performance)
+
+* remove unused and unnecessary code
+
+* implemented simpler efficient get_cofactors alternative mk_deriv_accept
+
+* simplifications in propagate_accept, and trace unusual cases
+
+* document the various seq_regex tracing & debugging command-line options
+
+* fix debug build (broken tracing)
+
+* guard eager Antimorov lifting for possible disabling
+
+* fix bug in propagate_accept Rule 1
+
+* disable eager version of Antimorov lifting for performance reasons
+
+* remove some remaining obsolete comments
+
+Co-authored-by: calebstanford-msr <t-casta@microsoft.com>
+Co-authored-by: Margus Veanes <margus@microsoft.com>",551,135,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h, src/smt/seq_regex.cpp, src/smt/seq_regex.h, src/util/state_graph.cpp",7,3,4,1.868148704,3,6838,7,1329.285714,0,0,3,1,1,1
+z3,9df6c10ad87ae37c7deba1e7428496dbd5ab0022,2c02264a94d2377ebf5f64162813b7e379446619,Caleb Stanford,caleb.pirsquared@gmail.com,2020/8/13 15:47,1597304856,"Regex solver updates (#4636)
+
+* std::cout debugging statements
+
+* comment out std::cout debugging as this is now a shared fork
+
+* convert std::cout to TRACE statements for seq_rewriter and seq_regex
+
+* add cases to min_length and max_length for regexes
+
+* bug fix
+
+* update min_length and max_length functions for REs
+
+* initial pass on simplifying derivative normal forms by eliminating redundant predicates locally
+
+* add seq_regex_brief trace statements
+
+* working on debugging ref count issue
+
+* fix ref count bug and convert trace statements to seq_regex_brief
+
+* add compact tracing for cache hits/misses
+
+* seq_regex fix cache hit/miss tracing and wrapper around is_nullable
+
+* minor
+
+* label and disable more experimental changes for testing
+
+* minor documentation / tracing
+
+* a few more @EXP annotations
+
+* dead state elimination skeleton code
+
+* progress on dead state elimination
+
+* more progress on dead state elimination
+
+* refactor dead state class to separate self-contained state_graph class
+
+* finish factoring state_graph to only work with unsigned values, and implement separate functionality for expr* logic
+
+* implement get_all_derivatives, add debug tracing
+
+* trace statements for debugging is_nullable loop bug
+
+* fix is_nullable loop bug
+
+* comment out local nullable change and mark experimental
+
+* pretty printing for state_graph
+
+* rewrite state graph to remove the fragile assumption that all edges from a state are added at a time
+
+* start of general cycle detection check + fix some comments
+
+* implement full cycle detection procedure
+
+* normalize derivative conditions to form 'ele <= a'
+
+* order derivative conditions by character code
+
+* fix confusing names m_to and m_from
+
+* assign increasing state IDs from 1 instead of using get_id on AST node
+
+* remove elim_condition call in get_dall_derivatives
+
+* use u_map instead of uint_map to avoid memory leak
+
+* remove unnecessary call to is_ground
+
+* debugging
+
+* small improvements to seq_regex_brief tracing
+
+* fix bug on evil2 example
+
+* save work
+
+* new propagate code
+
+* work in progress on using same seq sort for deriv calls
+
+* avoid re-computing derivatives: use same head var for every derivative call
+
+* use min_length on regexes to prune search
+
+* simple implementation of can_be_in_cycle using rank function idea
+
+* add a disabled experimental change
+
+* minor cleanup comments, etc.
+
+* seq_rewriter cleanup for PR
+
+* typo noticed by Nikolaj
+
+* move state graph to util/state_graph
+
+* re-add accidentally removed line
+
+* clean up seq_regex code removing obsolete functions and comments
+
+* a few more cleanup items
+
+* oops, missed merge change to fix compilation
+
+* disabled change to lift unions to the top level and treat them seperately in seq_regex solver
+
+* added get_overapprox_regex to over-approximate regex membership constraints
+
+* replace calls to is_epsilon with a centrally available method in seq_decl_plugin
+
+* simplifications and modifications in get_overapprox_regex and related
+
+* added approximation support for sequence expressions that use ite
+
+* removed is_app check that was redundant
+
+* tweak differences with upstream
+
+* rewrite derivative leaves
+
+* enable Antimorov-style derivatives via lifting unions in the solver
+
+* TODO placeholders for outputting state graph
+
+* change order in seq_regex propagate_in_re
+
+* implement a more restricted form of Antimorov derivatives via a special op code to indicate lifting unions
+
+* minor
+
+* new Antimorov optimizations based on BDD compatibility checking
+
+* seq regex tracing for # of derivatives
+
+* fix get_cofactors (currently this fix is buggy)
+
+* partially revert get_cofactors buggy change
+
+* re-implement get_cofactors to more efficiently explore nodes in the derivative expression
+
+* dgml generation for state graph
+
+* fix release build
+
+* improved dgml output
+
+* bug fixes in dgml generation
+
+* dot output support for state_graph and moved dgml and dot output under CASSERT
+
+* updated tracing of what regex corresponds to what state id with /tr:state_graph
+
+* clean up & document Antimorov derivative support
+
+* remove op cache tracing
+
+* remove re_rank experimental idea
+
+* small fix
+
+* fix Antimorov derivative (important change for the good performance)
+
+* remove unused and unnecessary code
+
+* implemented simpler efficient get_cofactors alternative mk_deriv_accept
+
+* simplifications in propagate_accept, and trace unusual cases
+
+* document the various seq_regex tracing & debugging command-line options
+
+* fix debug build (broken tracing)
+
+* guard eager Antimorov lifting for possible disabling
+
+* fix bug in propagate_accept Rule 1
+
+* disable eager version of Antimorov lifting for performance reasons
+
+* remove some remaining obsolete comments
+
+Co-authored-by: calebstanford-msr <t-casta@microsoft.com>
+Co-authored-by: Margus Veanes <margus@microsoft.com>",551,135,"src/ast/rewriter/seq_rewriter.cpp, src/ast/rewriter/seq_rewriter.h, src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h, src/smt/seq_regex.cpp, src/smt/seq_regex.h, src/util/state_graph.cpp",7,3,4,1.868148704,1,6838,7,1329.285714,0,0,0,1,1,1
+z3,c0a07f922970aa1c4c27e972f6e2885f9ca12350,fae206b738cbbd82069f440f22b00810d5794a15,Nikolaj Bjorner,nbjorner@microsoft.com,2020/8/14 19:29,1597404575,"add command-line help descriptions on tactics
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",65,13,"src/ackermannization/lackr.cpp, src/cmd_context/tactic_cmds.cpp, src/cmd_context/tactic_manager.h, src/shell/main.cpp, src/shell/smtlib_frontend.cpp, src/shell/smtlib_frontend.h, src/solver/parallel_tactic.cpp",7,4,4,2.486110953,8,2104,7,2395.428571,78,0,7,0,0,1
+z3,747a8ff72a4154c5df5100a41f1bea7b9c83c8e1,c50e869e5ac2a92c848616802c9d4d09d6ede73b,Margus Veanes,veanes@users.noreply.github.com,2020/8/18 20:01,1597752119,"computing and memoizing info for regexes (#4647)
+
+* computing and memoizing info for regex expressions
+
+* computing and memoizing info for regex expressions
+
+* took care of comments of the related pull request
+
+* removed +1 from min_length of ite
+
+* added to_str method for re and fixed STRACE bug in get_info_rec",133,23,"src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h",2,1,1,0.603386264,5,1874,2,2858,0,0,11,1,1,1
+z3,4dd9249a95d11e4fc42aab054d57058e3492871f,1e29ba76d0ad995e3e1fb5aa9450ae1505227dad,Margus Veanes,margus@microsoft.com,2020/8/21 17:34,1598002455,renamed compl method (compl is a reserved c++ keyword) to complement,3,3,"src/ast/seq_decl_plugin.cpp, src/ast/seq_decl_plugin.h",2,1,1,0.918295834,8,2079,2,2861,0,0,21,0,0,1
+z3,c722962124946eb197f9ddab0cf718f85c2a4712,22aee4d08dc5fe6cbb656b04d13f20560d416c63,Nikolaj Bjorner,nbjorner@microsoft.com,2020/8/24 17:45,1598262350,"fix issue in #4655
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",83,41,"src/ast/euf/euf_egraph.cpp, src/ast/euf/euf_egraph.h, src/ast/euf/euf_enode.h, src/smt/theory_seq.cpp, src/test/egraph.cpp",5,3,3,1.765306552,7,3451,5,344.2,177,0,59,0,1,1
+z3,f4ec63f39c249299eaca857bf594b568268e2a9e,a51e40a6cd4f2f2897dbbbbac96ceda7fa07f0c1,Nikolaj Bjorner,nbjorner@microsoft.com,2020/8/6 14:26,1596695211,"gc perf fix
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",46,4,"src/smt/smt_context.cpp, src/smt/watch_list.cpp, src/smt/watch_list.h",3,1,1,1.07832208,3,3863,3,2845,20,0,3,0,1,1
+project,parent_hashes,commit_hash,author_name,author_email,author_date,author_date_unix_timestamp,commit_message,la,ld,fileschanged,nf,ns,nd,entropy,ndev,lt,nuc,age,exp,rexp,sexp,classification,fix,1
+project,parent_hashes,commit_hash,author_name,author_email,author_date,author_date_unix_timestamp,commit_message,la,ld,fileschanged,nf,ns,nd,entropy,ndev,lt,nuc,age,exp,rexp,sexp,classification,fix,1
+cvc5,534a9b73dae2c0a3b6040f6a51f824ca69850c4b,1e6293daa3f6d61c9035e22ee76448b46dd83ce8,Alex Ozdemir,aozdemir@hmc.edu,2019-01-15 23:55:29,1547567729,"Extended Resolution Signature (#2788)
+
+* Extended Resolution Signature
+
+While extended resolution is a fairly general technique, the paper
+""Extended Resolution Simulates DRAT"" / the drat2er uses exactly one new
+type of rule: definitions of the form
+
+    new <=> old v (~l_1 ^ ~l_2 ^ ... ^ ~l_n)
+
+This PR adds axioms supporting this kind of definition, and adds a test
+making use of those new axioms. The axioms support the following ideas:
+
+   1. Introducing a **fresh** variable, defined in the form above
+   2. Clausifying that definition to produce proofs of $$ n + 2 $$ new
+      clauses in the form of two clauses, and a cnf with $$ n $$ clauses
+   3. An axiom for unrolling the proof of the cnf into proofs of the
+      original clauses.
+
+* Addressing Yoni's comments
+
+1. Added a new (trivial) test
+2. Improved a bunch of documentation
+
+* Update proofs/signatures/er.plf
+
+Co-Authored-By: alex-ozdemir <aozdemir@hmc.edu>
+
+* Removed references to RATs from the signature
+
+There are still a few references in the header comment.
+
+* Aside on continuations
+
+* Scrap the elision annotations",287,45,"proofs/signatures/drat.plf, proofs/signatures/er.plf, proofs/signatures/er_test.plf, proofs/signatures/lrat.plf, proofs/signatures/sat.plf",5,1,1,1.95527989699842,5,0,5,398.2,64,0,0,0,0,0
+z3,b33f5f879e5cf662b854d9c9e3ff968abdb50f1a,e01a668da0f9a57d096c2f212a2b25d169c4a30a,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-16 02:29:33,1547576973,"coordinate drat with clause removal
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",82,83,"src/sat/sat_elim_eqs.cpp, src/sat/sat_simplifier.cpp, src/sat/sat_simplifier.h, src/sat/sat_solver.cpp, src/sat/sat_solver.h",5,1,1,0.8279730398276216,7,6495,5,2277.0,121,0,21,0,0,0
+cvc5,1e6293daa3f6d61c9035e22ee76448b46dd83ce8,0287acb1180db269c5dd0fe0dad8f2fa925ba0b9,Alex Ozdemir,aozdemir@hmc.edu,2019-01-16 09:52:42,1547603562,"Bugfix: LFSC clause equality (#2801)
+
+* Bugfix: LFSC clause equality
+
+My implementation of clause equality had an undocumented assumption that
+the clauses didn't have any duplicate literals. Now that assumption is
+gone, and the tests suite has been expanded.
+
+* Added an empty clause test
+
+* Typo fix: Yoni
+
+Co-Authored-By: alex-ozdemir <aozdemir@hmc.edu>
+
+* Address Yoni's comments
+
+* Remove a duplicate clause_eq test.
+* Add an ordering clause_eq test.
+* Improve the documentation of clause_eq.",162,27,"proofs/signatures/drat.plf, proofs/signatures/drat_test.plf, proofs/signatures/lrat.plf",3,1,1,1.2105170753969876,5,0,3,31.666666666666668,69,0,1,1,1,0
+z3,"e01a668da0f9a57d096c2f212a2b25d169c4a30a, 43ee345f01e2ecb7b3d93fa90c0a8cc639afde97",16c15d53a9c585b66bf7f22f70b0a9123e9e57c9,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-16 10:16:26,1547604986,"Merge pull request #1815 from yatli/master
+
+api: dotnet: switch to multi-targeting project and modern cmake-dotnet integration.",740,645,,0,0,0,0.0,7,0,0,0.0,126,0,0,0,0,0
+z3,16c15d53a9c585b66bf7f22f70b0a9123e9e57c9,038971c029c0835e69e1dce5e54359dad585f9ee,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-16 10:21:56,1547605316,"Revert ""api: dotnet: switch to multi-targeting project and modern cmake-dotnet integration.""",645,740,".gitignore, .travis.yml, contrib/ci/Dockerfiles/z3_base_ubuntu32_16.04.Dockerfile, contrib/ci/Dockerfiles/z3_base_ubuntu_14.04.Dockerfile, contrib/ci/Dockerfiles/z3_base_ubuntu_16.04.Dockerfile, contrib/ci/scripts/test_z3_examples_cmake.sh, examples/CMakeLists.txt, examples/dotnet/README, src/api/dotnet/CMakeLists.txt, src/api/dotnet/Microsoft.Z3.csproj, src/api/dotnet/Properties/AssemblyInfo.cs.in, src/api/dotnet/core/README.txt, src/api/dotnet/core/core.csproj",20,4,8,2.6738363437689143,7,0,14,985.9230769230768,126,0,23,0,0,0
+z3,"16c15d53a9c585b66bf7f22f70b0a9123e9e57c9, 038971c029c0835e69e1dce5e54359dad585f9ee",e94aa5bb1d2ab00c833dc4baea06dc47cdf2cd54,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-16 10:22:14,1547605334,"Merge pull request #2084 from Z3Prover/revert-1815-master
+
+Revert ""api: dotnet: switch to multi-targeting project and modern cmake-dotnet integration.""",645,740,,0,0,0,0.0,7,0,0,0.0,146,0,0,0,0,0
+z3,e94aa5bb1d2ab00c833dc4baea06dc47cdf2cd54,247980c5a28e44ff367ce9a3dbbcfc6a85d73d66,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-16 11:41:32,1547610092,"don't assign already assigned literals
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",2,2,src/sat/sat_solver.cpp,1,1,1,-0.0,7,3728,1,2278.0,146,0,22,0,0,0
+cvc5,0287acb1180db269c5dd0fe0dad8f2fa925ba0b9,60b5ac4c6488014feb4820a98e663cc5fdbad5c1,Andres Noetzli,andres.noetzli@gmail.com,2019-01-16 12:27:05,1547612825,Update NEWS file (#2804),6,0,NEWS,1,0,1,-0.0,5,0,1,3361.0,22,0,0,0,0,0
+z3,247980c5a28e44ff367ce9a3dbbcfc6a85d73d66,f2e636c598d298ef72a0f21d172bfbbd856ab354,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-16 16:37:21,1547627841,"record simplified input clauses as lemmas
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",54,23,"src/sat/sat_cleaner.cpp, src/sat/sat_solver.cpp, src/smt/mam.cpp, src/smt/smt_clause.cpp, src/smt/smt_clause.h, src/smt/smt_context_pp.cpp, src/smt/smt_quantifier.cpp",7,2,2,2.5689013498881765,7,8461,7,2277.285714285714,147,0,39,0,0,0
+cvc5,60b5ac4c6488014feb4820a98e663cc5fdbad5c1,78d7485639cdf0769c13606b8ad3f5e9455153f1,Andres Noetzli,andres.noetzli@gmail.com,2019-01-16 16:38:38,1547627918,"Add option to print BV constants in binary (#2805)
+
+This commit adds the option `--bv-print-consts-in-binary` to print
+bit-vector constants in binary, e.g. `#b0001`, instead of decimal, e.g.
+`(_ bv1 4)`). The option is on by default to match the behavior of Z3
+and Boolector.",37,5,"src/options/bv_options.toml, src/printer/smt2/smt2_printer.cpp, test/regress/CMakeLists.txt, test/regress/regress0/printer/bv_consts_bin.smt2, test/regress/regress0/printer/bv_consts_dec.smt2",5,3,4,2.3021339470844224,5,1852,5,754.4,23,0,6,0,0,0
+z3,f2e636c598d298ef72a0f21d172bfbbd856ab354,442e47dfced2b010b47b27401d8ba6c892b1f230,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-17 16:34:26,1547714066,"fix datatype occurs check bug reported by Gerhard Schellhorn
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",40,25,"src/ast/ast.cpp, src/smt/smt_conflict_resolution.cpp, src/smt/smt_context.cpp, src/smt/smt_context_pp.cpp, src/smt/theory_datatype.cpp, src/smt/theory_datatype.h",6,2,2,1.2858190458929366,7,8894,6,2278.1666666666665,154,0,29,1,1,0
+z3,442e47dfced2b010b47b27401d8ba6c892b1f230,947fe2ff9c7451d2f192d3453ed4d1eb347cd0f3,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-17 16:35:07,1547714107,"fix datatype occurs check bug reported by Gerhard Schellhorn
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",0,1,src/smt/smt_context.cpp,1,1,1,-0.0,7,3508,1,2278.0,160,0,18,1,1,0
+cvc5,78d7485639cdf0769c13606b8ad3f5e9455153f1,e9bfbb2f666c8cb4cf783d8ebd398fa9304bb5b7,Andres Noetzli,andres.noetzli@gmail.com,2019-01-18 00:43:53,1547743433,"Fix ABC build (#2808)
+
+PR #2786 introduced a pure virtual method `TBitblaster::getSatSolver()`.
+`AigBitblaster` was missing the implementation of that method. This
+commit adds an implementation that simply returns the underlying SAT
+solver. Note: The method is currently only used for proofs and CVC4 does
+not support proofs in combination with ABC. To make this explicit, the
+commit also adds a check in `SmtEngine::setDefaults()` that makes sure
+that we are not trying to produce proofs with `--bitblast-aig` (before
+the commit, we just crashed with an assertion failure/null pointer
+dereference).",16,1,"src/smt/smt_engine.cpp, src/theory/bv/bitblast/aig_bitblaster.cpp, src/theory/bv/bitblast/aig_bitblaster.h, src/theory/bv/bitblast/bitblaster.h",4,2,2,1.6457113704075783,5,4778,4,1051.75,28,0,9,0,1,0
+cvc5,e9bfbb2f666c8cb4cf783d8ebd398fa9304bb5b7,7a5e007ea530c97c5f3885958f5d018e350013a7,Andres Noetzli,andres.noetzli@gmail.com,2019-01-18 05:59:09,1547762349,Strings: Introduce checkEntailContains() (#2809),76,63,"src/theory/strings/theory_strings_rewriter.cpp, src/theory/strings/theory_strings_rewriter.h",2,1,1,0.4481282187895241,5,4395,2,1954.0,32,0,8,0,0,0
+z3,947fe2ff9c7451d2f192d3453ed4d1eb347cd0f3,4caadc65197439042fa2fba4bcdea91f7da89609,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-18 10:13:04,1547777584,"add note about libgomp dependency
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",6,1,scripts/mk_nuget_release.py,1,1,1,-0.0,7,85,1,64.0,161,0,1,0,0,0
+cvc5,7a5e007ea530c97c5f3885958f5d018e350013a7,8b494ee2e856a0ddb5ea60a1a39340816ba0fc29,Alex Ozdemir,aozdemir@hmc.edu,2019-01-18 11:10:26,1547781026,"Extract DIMACS Printing (#2800)
+
+Creating LRAT proofs reuqires writing SAT problems in the DIMACS format.
+Before this code was in the LRAT class.
+
+However, since creating ER proofs will also require writing DIMACS, I
+decided to extract it.
+
+At the same time I realized that my prior representation of used clauses
+was unnecessarily poor. I had chosen it to align with
+`CnfProof::collectAtomsForClauses`, but the format is really bad (it
+requires extra allocations & manual memory management), and I discovered
+that the aforementioned method is super simple, so I'm moving to a
+better format.",151,52,"src/CMakeLists.txt, src/proof/dimacs_printer.cpp, src/proof/dimacs_printer.h, src/proof/lrat/lrat_proof.cpp, src/proof/lrat/lrat_proof.h",5,2,3,1.7234529257704714,5,391,5,103.4,72,0,12,0,0,0
+z3,4caadc65197439042fa2fba4bcdea91f7da89609,c45ab6efed55cecc13a2d41fd60ded2d9a9eccad,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-18 15:12:08,1547795528,"add setting to dump intermediary models #2087
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",27,5,"src/opt/opt_context.cpp, src/opt/opt_context.h, src/opt/opt_params.pyg, src/opt/optsmt.cpp, src/opt/optsmt.h",5,1,1,1.789125211559506,7,2313,5,1906.2,162,0,5,0,0,0
+z3,c45ab6efed55cecc13a2d41fd60ded2d9a9eccad,2f0d2ec385ffa5e2e97071cc3ce884d1d8800a2b,Titus Barik,titus.barik@microsoft.com,2019-01-18 16:18:16,1547799496,PYTHON_PATH should say PYTHONPATH.,1,1,examples/python/example.py,1,1,1,-0.0,8,7,1,2273.0,0,0,1,0,0,0
+z3,"c45ab6efed55cecc13a2d41fd60ded2d9a9eccad, 2f0d2ec385ffa5e2e97071cc3ce884d1d8800a2b",dc5af2d96988c764f18f5cc9ae621ede506c8647,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-18 18:07:46,1547806066,"Merge pull request #2088 from barik/patch-1
+
+PYTHON_PATH should say PYTHONPATH.",1,1,,0,0,0,0.0,8,0,0,0.0,167,0,0,0,0,0
+z3,f2e636c598d298ef72a0f21d172bfbbd856ab354,0b7021d2c8481a4a4b67b1f831bf837782e8b7cc,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-18 18:09:19,1547806159,"na
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",4,1,src/opt/opt_context.cpp,1,1,1,-0.0,8,1520,1,1919.0,167,0,6,0,0,0
+z3,"0b7021d2c8481a4a4b67b1f831bf837782e8b7cc, dc5af2d96988c764f18f5cc9ae621ede506c8647",1efbc25b3bbb3fb653bbfe7d14aabc0d13f948ba,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-18 18:09:22,1547806162,Merge branch 'master' of https://github.com/z3prover/z3,73,32,,0,0,0,0.0,8,0,0,0.0,168,0,0,0,0,0
+cvc5,8b494ee2e856a0ddb5ea60a1a39340816ba0fc29,b4c9b783384fb05a3e71ff535b5f790e79c28a94,Andres Noetzli,andres.noetzli@gmail.com,2019-01-19 03:34:43,1547840083,"Fix missing-override warning (#2811)
+
+`TLazyBitblaster::setProofLog()` was defined even though the method was
+not virtual before PR #2808 and `TBitblaster` was implementing the same
+method. After that PR, which made the method virtual, GCC complained
+about a missing `override` keyword for `setProofLog()`. However, the
+method should have been removed (see
+[comment](https://github.com/CVC4/CVC4/pull/2786#discussion_r247299617)).
+This commit removes the function definition.",0,9,"src/theory/bv/bitblast/lazy_bitblaster.cpp, src/theory/bv/bitblast/lazy_bitblaster.h",2,1,1,0.5032583347756457,5,547,2,290.0,34,0,9,0,1,0
+z3,1efbc25b3bbb3fb653bbfe7d14aabc0d13f948ba,37d9e6d8112ca7a21a223bb0cb2fea4d9c93acf5,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-20 10:40:11,1547952011,"incrementally adding files from dotnet core pull request from @yatli
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",518,1,".gitignore, cmake/modules/DotnetImports.props.in, cmake/modules/FindDotnet.cmake, contrib/ci/Dockerfiles/z3_base_ubuntu32_16.04.Dockerfile, examples/dotnet/CMakeLists.txt",5,3,4,0.5633918417018897,8,0,5,618.8,168,0,17,0,0,0
+z3,37d9e6d8112ca7a21a223bb0cb2fea4d9c93acf5,cabe0ee4479452792f80e43ddea753cf8a4de319,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-20 10:51:44,1547952704,"integrating additional changes from @yatli pull request #1815
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",148,458,"examples/CMakeLists.txt, examples/dotnet/dotnet.csproj, src/api/dotnet/Microsoft.Z3.csproj.in, src/api/dotnet/Microsoft.Z3.props, src/api/dotnet/Microsoft.Z3.targets",9,3,3,1.61006040547138,8,0,6,222.2,173,0,23,0,0,0
+z3,cabe0ee4479452792f80e43ddea753cf8a4de319,9dd41ba554c9ddc616e2ce02c0cf8daa36b12266,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-20 11:13:03,1547953983,"remove offending assert, disable assembly-info for dotnet core
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",20,16,"scripts/mk_project.py, scripts/mk_util.py, src/opt/opt_context.cpp",3,3,2,0.6143694458867568,8,4747,3,2158.333333333333,182,0,8,0,0,0
+z3,9dd41ba554c9ddc616e2ce02c0cf8daa36b12266,5cdbb1f7be7efaf55312fb7a608ca9977ba0bd80,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-20 11:25:34,1547954734,"this is still used
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",7,0,src/api/dotnet/Microsoft.Z3.Sharp.pc.in,1,1,1,-0.0,8,0,1,1150.0,185,0,14,0,0,0
+z3,5cdbb1f7be7efaf55312fb7a608ca9977ba0bd80,785fe2f6f7271ff85cf7eb2dbe3b78aa4d5f85c4,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-20 12:43:05,1547959385,"add main remaining updates from #1815
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",76,158,"contrib/ci/Dockerfiles/z3_base_ubuntu32_16.04.Dockerfile, contrib/ci/Dockerfiles/z3_base_ubuntu_14.04.Dockerfile, contrib/ci/Dockerfiles/z3_base_ubuntu_16.04.Dockerfile, contrib/ci/scripts/test_z3_examples_cmake.sh, examples/CMakeLists.txt, examples/dotnet/README, src/api/dotnet/CMakeLists.txt",7,4,5,1.1540804208524873,8,0,7,819.7142857142857,186,0,33,0,0,0
+z3,785fe2f6f7271ff85cf7eb2dbe3b78aa4d5f85c4,8566d88b992610060a6523f28272d3384a2f2471,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-20 12:49:04,1547959744,"remove validation assert
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",1,1,src/opt/opt_context.cpp,1,1,1,-0.0,8,1529,1,1921.0,193,0,8,0,0,0
+z3,8566d88b992610060a6523f28272d3384a2f2471,6bd87f837a143ec5321d598202591d6ae84d432f,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-20 14:14:26,1547964866,"fix Boolean argument
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",1,1,src/solver/parallel_tactic.cpp,1,1,1,-0.0,8,623,1,278.0,194,0,1,0,1,0
+z3,6bd87f837a143ec5321d598202591d6ae84d432f,49a51a075776cd37126bf868cd92184e484752a7,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-22 07:06:40,1548112000,"fix #2096, introduced when fixing #2082
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",1,1,src/ast/rewriter/arith_rewriter.cpp,1,1,1,-0.0,8,1532,1,2280.0,195,0,13,0,1,0
+z3,49a51a075776cd37126bf868cd92184e484752a7,f9195c77a7ac88fea0bde163bf04256b969619f5,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-22 09:46:04,1548121564,"remove not-handled clause from mod with non-numerals
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",0,16,src/smt/theory_lra.cpp,1,1,1,-0.0,8,3055,1,622.0,196,0,19,0,0,0
+cvc5,b4c9b783384fb05a3e71ff535b5f790e79c28a94,f7ebbd30653cffa3412b914f5813302bd2101578,Aina Niemetz,aina.niemetz@gmail.com,2019-01-22 10:55:13,1548125713,New README (markdown). (#2797),138,102,README.md,2,0,1,0.983708262623186,5,0,2,-1.0,22,0,0,0,0,0
+cvc5,f7ebbd30653cffa3412b914f5813302bd2101578,af1714ddc446fe6e239852374f5f628302980488,Andrew Reynolds,andrew.j.reynolds@gmail.com,2019-01-22 14:43:17,1548139397,Fix parsing of overloaded parametric datatype selectors (#2819),36,2,"src/expr/symbol_table.cpp, test/regress/CMakeLists.txt, test/regress/regress0/datatypes/repeated-selectors-2769.smt2",3,2,3,0.995263210620236,5,495,3,951.3333333333334,12,0,4,0,1,0
+cvc5,af1714ddc446fe6e239852374f5f628302980488,e5f4e2c0c1dc79f9940ddb4fcdbf04d6cffe98f5,Andrew Reynolds,andrew.j.reynolds@gmail.com,2019-01-22 15:48:48,1548143328,Fix tuple and record CVC printing (#2818),52,4,"src/printer/cvc/cvc_printer.cpp, test/regress/CMakeLists.txt, test/regress/regress0/datatypes/tree-get-value.cvc, test/regress/regress0/printer/tuples_and_records.cvc",4,2,4,1.6557591426557532,5,1438,4,871.0,15,0,7,0,1,0
+z3,f9195c77a7ac88fea0bde163bf04256b969619f5,412eee0dace45c2d7c13a6fbdc0a6d83e7a021d2,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-22 18:12:39,1548151959,"throttle number of rounds of ba simplification
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",3,2,src/sat/ba_solver.cpp,1,1,1,-0.0,8,4001,1,572.0,197,0,24,0,0,0
+cvc5,e5f4e2c0c1dc79f9940ddb4fcdbf04d6cffe98f5,03e5936c2e265a85d5a98d8cd4c4015da3b508f2,Andres Noetzli,andres.noetzli@gmail.com,2019-01-22 18:47:08,1548154028,"Strings: Strengthen multiset reasoning (#2817)
+
+This commit introduces three helper methods for performing multiset
+reasoning: an entailment check whether a term is always a strict subset
+of another term in the multiset domain (`checkEntailMultisetSubset()`),
+a check whether a string term is always homogeneous
+(`checkEntailHomogeneousString()`), and an overapproximation for the
+multiset domain (`getMultisetApproximation()`). It also adds unit tests
+related to multiset reasoning.",355,160,"src/theory/strings/theory_strings_rewriter.cpp, src/theory/strings/theory_strings_rewriter.h, test/unit/theory/theory_strings_rewriter_white.h",3,2,2,1.146519775356036,5,5202,3,1405.6666666666667,36,0,21,0,0,0
+cvc5,03e5936c2e265a85d5a98d8cd4c4015da3b508f2,495787793b07a05f384824c92eef4e26d92228fc,Andres Noetzli,andres.noetzli@gmail.com,2019-01-23 10:08:11,1548209291,"Avoid using ProofManager in non-proof CMS build (#2814)
+
+PR #2786 changed `CryptoMinisatSolver::addClause()` to register clauses
+with the bit-vector proof if proofs are turned on. The new code
+requested the `ProofManager` even when proofs were turned off, which
+made the `eager-inc-cryptominisat.smt2` regression and our nightlies
+fail. This commit guards the access to the `ProofManager`, restoring the
+semantics of the original code when proofs are turned off.",16,6,src/prop/cryptominisat.cpp,1,1,1,-0.0,5,180,1,972.0,39,0,1,0,0,0
+z3,412eee0dace45c2d7c13a6fbdc0a6d83e7a021d2,8e5c1fcfd150e6b51040f1802f86e831e674f134,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-23 16:06:25,1548230785,"make context_solve configurable and exposed as top-level tactic parameter
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",27,23,"src/tactic/CMakeLists.txt, src/tactic/core/blast_term_ite_tactic.cpp, src/tactic/core/propagate_values_tactic.cpp, src/tactic/core/solve_eqs_tactic.cpp",4,1,2,1.5139173857975103,8,1209,4,1764.0,198,0,3,0,0,0
+z3,8e5c1fcfd150e6b51040f1802f86e831e674f134,9c07167ff8b1a60b3a990ed6666f725c9176f508,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-23 16:06:44,1548230804,"add new pyg file
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",20,0,src/tactic/tactic_params.pyg,1,1,1,-0.0,8,0,1,-1.0,202,0,4,0,0,0
+z3,9c07167ff8b1a60b3a990ed6666f725c9176f508,f7746e22848ea318a8a094e30a002e022aef1d85,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-23 16:58:00,1548233880,"address perf #2098
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",4,20,"src/sat/sat_big.cpp, src/sat/sat_big.h",2,1,1,0.4138168503036337,8,276,2,405.0,203,0,25,0,0,0
+cvc5,495787793b07a05f384824c92eef4e26d92228fc,467ef8692009f440bda74083d476131ff1e88b51,Alex Ozdemir,aozdemir@hmc.edu,2019-01-24 11:45:12,1548301512,"Extended DRAT signature to operational DRAT (#2815)
+
+* Extended DRAT signature to operational DRAT
+
+The DRAT signature now supports both operational and specified DRAT.
+That is, either kind of proof will be accepted.
+
+The goal of this implementation of operational DRAT was to re-use as
+much of the specified DRAT machinery as possible. However, by writing a
+separate operational signature, we could make it much more efficient
+(after all, operational DRAT came about because of a push for efficient
+cheking).
+
+You can run the new AND old DRAT tests by running
+
+```
+lfscc sat.plf smt.plf lrat.plf drat.plf drat_test.plf
+```
+
+* Apply suggestions from code review (Yoni)
+
+Co-Authored-By: alex-ozdemir <aozdemir@hmc.edu>",293,4,"proofs/signatures/drat.plf, proofs/signatures/drat_test.plf",2,1,1,0.9995992551590468,5,0,2,38.0,77,0,2,0,0,0
+z3,f7746e22848ea318a8a094e30a002e022aef1d85,498864c582e2897d7246b0124a9b48fb8643d16b,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-24 12:21:23,1548303683,"adding dump facility for cancelation #2095, easing dimacs in/out
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",645,510,"src/api/api_solver.cpp, src/api/c++/z3++.h, src/api/python/z3/z3.py, src/api/z3_api.h, src/ast/CMakeLists.txt, src/ast/display_dimacs.cpp, src/ast/display_dimacs.h, src/muz/spacer/spacer_iuc_solver.cpp, src/muz/spacer/spacer_iuc_solver.h, src/opt/opt_solver.cpp, src/opt/opt_solver.h, src/sat/sat_solver/inc_sat_solver.cpp, src/smt/smt_solver.cpp, src/solver/CMakeLists.txt, src/solver/combined_solver.cpp, src/solver/solver.cpp, src/solver/solver.h, src/solver/solver_na2as.cpp, src/solver/solver_na2as.h, src/solver/solver_params.pyg, src/solver/solver_pool.cpp, src/solver/tactic2solver.cpp, src/tactic/fd_solver/bounded_int2bv_solver.cpp, src/tactic/fd_solver/enum2bv_solver.cpp, src/tactic/fd_solver/pb2bv_solver.cpp, src/tactic/goal.cpp, src/tactic/goal.h, src/util/chashtable.h",28,9,12,2.0623666652730943,8,13567,28,1366.428571428571,205,0,97,0,0,0
+z3,498864c582e2897d7246b0124a9b48fb8643d16b,8da1d6070b1d8287330b066ceb77a817a51b0d8d,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-24 14:00:56,1548309656,"throttle big-reductions #2101 #2098
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",21,5,"src/api/c++/z3++.h, src/sat/sat_big.cpp, src/sat/sat_scc.cpp",3,2,2,1.2389012566026305,8,2943,3,1655.6666666666667,233,0,44,0,0,0
+z3,8da1d6070b1d8287330b066ceb77a817a51b0d8d,ad81fee118628fbe0ace97865948ff9b8cbc8df7,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-24 19:26:44,1548329204,"adding maxlex, throttle use of asymmetric literal addition
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",274,27,"src/opt/CMakeLists.txt, src/opt/maxlex.cpp, src/opt/maxlex.h, src/opt/maxres.cpp, src/opt/maxsmt.cpp, src/opt/maxsmt.h, src/opt/sortmax.cpp, src/opt/wmax.cpp, src/sat/sat_simplifier.cpp",9,2,2,1.8760247193068924,8,3620,9,1195.6666666666667,236,0,38,0,0,0
+z3,ad81fee118628fbe0ace97865948ff9b8cbc8df7,b4f4a1f316772c1bb18ba414127c242d01b493d1,Nikolaj Bjorner,nbjorner@microsoft.com,2019-01-24 19:47:50,1548330470,"adding maxlex, throttle use of asymmetric literal addition
+
+Signed-off-by: Nikolaj Bjorner <nbjorner@microsoft.com>",13,11,src/opt/maxlex.cpp,1,1,1,-0.0,8,145,1,-1.0,245,0,11,0,0,0
