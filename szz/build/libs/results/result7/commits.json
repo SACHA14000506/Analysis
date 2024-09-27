@@ -1,0 +1,1 @@
+{"7f8a7c3d83011dd1d0571b2c4d954b3434f60901":{"changes":{"src\/test\/main.cpp":"MODIFY"},"diff":{"src\/test\/main.cpp":[{"add":["12","","210","    if (test_all) return 0;"],"delete":["12","static void tst_exit_all_tests() {","13","    exit(0);","14","}","212","    TST(exit_all_tests);"]}]}}}
